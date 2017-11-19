@@ -86,9 +86,7 @@
               @if ($errors->has('address'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('address') }}</small>
               @endif
-
             </div>
-
 
             <div class="g-mb-20">
               <input
@@ -100,9 +98,7 @@
               @if ($errors->has('city'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('city') }}</small>
               @endif
-
             </div>
-
 
             <div class="g-mb-20">
               <input

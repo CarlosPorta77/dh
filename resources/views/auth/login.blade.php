@@ -37,7 +37,7 @@
                   <i class="icon-finance-067 u-line-icon-pro"></i>
                 </span>
                 <input
-                    class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-rounded-left-0 g-rounded-right-3 g-py-15 g-px-15 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                    class="form-control g-color-black g-bg-white g-bg-white--focus g-rounded-left-0 g-rounded-right-3 g-py-15 g-px-15 {{ $errors->has('email') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }} d-block"
                     id="email"
                     type="email"
                     name="email"
@@ -50,7 +50,6 @@
               @if ($errors->has('email'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('email') }}</small>
               @endif
-
             </div>
 
             <div class="mb-4">
@@ -59,7 +58,7 @@
                   <i class="icon-media-094 u-line-icon-pro"></i>
                 </span>
                 <input
-                    class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-rounded-left-0 g-rounded-right-3 g-py-15 g-px-15 {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                    class="form-control g-color-black g-bg-white g-bg-white--focus g-rounded-left-0 g-rounded-right-3 g-py-15 g-px-15 {{ $errors->has('email') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }} d-block"
                     id="password"
                     type="password"
                     name="password"
@@ -99,11 +98,9 @@
             </div>
 
             <div class="d-flex justify-content-center text-center g-mb-30">
-              <div
-                  class="d-inline-block align-self-center g-width-50 g-height-1 g-bg-gray-light-v1"></div>
+              <div class="d-inline-block align-self-center g-width-50 g-height-1 g-bg-gray-light-v1"></div>
               <span class="align-self-center g-color-gray-dark-v5 mx-4">O</span>
-              <div
-                  class="d-inline-block align-self-center g-width-50 g-height-1 g-bg-gray-light-v1"></div>
+              <div class="d-inline-block align-self-center g-width-50 g-height-1 g-bg-gray-light-v1"></div>
             </div>
 
             <div class="row no-gutters">
@@ -146,9 +143,9 @@
             <!-- Icon Blocks -->
             <div class="media mb-5">
               <div class="d-flex mr-3">
-                                <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
-                                    <i class="icon-finance-168 u-line-icon-pro"></i>
-                                </span>
+                <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
+                    <i class="icon-finance-168 u-line-icon-pro"></i>
+                </span>
               </div>
               <div class="media-body align-self-center">
                 <h3 class="h5 g-font-weight-400">Reliable contracts</h3>
@@ -161,9 +158,9 @@
             <!-- Icon Blocks -->
             <div class="media mb-5">
               <div class="d-flex mr-3">
-                                <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
-                                    <i class="icon-finance-193 u-line-icon-pro"></i>
-                                </span>
+                <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
+                    <i class="icon-finance-193 u-line-icon-pro"></i>
+                </span>
               </div>
               <div class="media-body align-self-center">
                 <h3 class="h5 g-font-weight-400">Security</h3>
@@ -176,9 +173,9 @@
             <!-- Icon Blocks -->
             <div class="media">
               <div class="d-flex mr-3">
-                                <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
-                                    <i class="icon-finance-122 u-line-icon-pro"></i>
-                                </span>
+                <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
+                    <i class="icon-finance-122 u-line-icon-pro"></i>
+                </span>
               </div>
               <div class="media-body align-self-center">
                 <h3 class="h5 g-font-weight-400">Maintain</h3>
@@ -227,8 +224,7 @@
           <div class="media g-px-50--lg">
             <i class="d-flex g-color-white g-font-size-40 g-pos-rel g-top-3 mr-4 icon-hotel-restaurant-062 u-line-icon-pro"></i>
             <div class="media-body text-left">
-                            <span
-                                class="d-block g-color-white g-font-weight-500 g-font-size-17 text-uppercase">Free 24</span>
+              <span class="d-block g-color-white g-font-weight-500 g-font-size-17 text-uppercase">Free 24</span>
               <span class="d-block g-color-white-opacity-0_8">Days Storage</span>
             </div>
           </div>
