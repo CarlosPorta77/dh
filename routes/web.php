@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    return view('auth.test');
 });
 
 Route::get('/prueba', 'TestController@welcome');
