@@ -148,7 +148,7 @@
                   <div class="row no-gutters g-pb-5">
                     <div class="col-4 pr-3">
                       <a class="u-basket__product-img" href="#!">
-                        <img class="img-fluid" src="../assets/img-temp/150x150/img1.jpg"
+                        <img class="img-fluid" src="{{asset('assets/img-temp/150x150/img1.jpg')}}"
                              alt="Image Description">
                       </a>
                     </div>
@@ -170,7 +170,7 @@
                   <div class="row no-gutters g-pb-5">
                     <div class="col-4 pr-3">
                       <a class="u-basket__product-img" href="#!">
-                        <img class="img-fluid" src="../assets/img-temp/150x150/img2.jpg"
+                        <img class="img-fluid" src="{{asset('assets/img-temp/150x150/img2.jpg')}}"
                              alt="Image Description">
                       </a>
                     </div>
@@ -192,7 +192,7 @@
                   <div class="row no-gutters g-pb-5">
                     <div class="col-4 pr-3">
                       <a class="u-basket__product-img" href="#!">
-                        <img class="img-fluid" src="../assets/img-temp/150x150/img3.jpg"
+                        <img class="img-fluid" src="{{asset('assets/img-temp/150x150/img3.jpg')}}"
                              alt="Image Description">
                       </a>
                     </div>
@@ -214,7 +214,7 @@
                   <div class="row no-gutters g-pb-5">
                     <div class="col-4 pr-3">
                       <a class="u-basket__product-img" href="#!">
-                        <img class="img-fluid" src="../assets/img-temp/150x150/img4.jpg"
+                        <img class="img-fluid" src="{{asset('assets/img-temp/150x150/img4.jpg')}}"
                              alt="Image Description">
                       </a>
                     </div>
@@ -932,7 +932,7 @@
 
                   <div class="col-md-6 col-lg-4 g-mb-30 g-mb-0--md">
                     <article class="g-pos-rel">
-                      <img class="img-fluid" src="assets/img-temp/700x700/img1.jpg"
+                      <img class="img-fluid" src="{{asset('assets/img-temp/700x700/img1.jpg')}}"
                            alt="Image Description">
 
                       <div class="g-pos-abs g-bottom-30 g-left-30">
@@ -1021,7 +1021,7 @@
                   </div>
 
                   <div class="col-md-8 g-min-height-400 g-bg-size-cover g-bg-pos-center"
-                       data-bg-img-src="assets/img-temp/700x467/img1.jpg">
+                       data-bg-img-src="{{asset('assets/img-temp/700x467/img1.jpg')}}">
                     <article class="g-pa-30">
                       <span class="d-block g-color-white-opacity-0_8 text-uppercase mb-2">Bestseller</span>
                       <span class="d-block h1 g-color-white">MVMTH Swiss Watch</span>
@@ -1347,7 +1347,7 @@
                     <!-- Article -->
                     <article
                         class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-bluegray-opacity-0_3--after text-center g-px-40 g-py-80"
-                        data-bg-img-src="assets/img-temp/600x400/img1.jpg">
+                        data-bg-img-src="{{asset('assets/img-temp/600x400/img1.jpg')}}">
                       <div class="g-pos-rel g-z-index-1">
                                                     <span
                                                         class="d-block g-color-white g-font-weight-400 text-uppercase mb-3">Blouse</span>
@@ -1363,7 +1363,7 @@
                     <!-- Article -->
                     <article
                         class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-bluegray-opacity-0_3--after text-center g-px-40 g-py-80"
-                        data-bg-img-src="assets/img-temp/600x400/img2.jpg">
+                        data-bg-img-src="{{asset('assets/img-temp/600x400/img2.jpg')}}">
                       <div class="g-pos-rel g-z-index-1">
                                                     <span
                                                         class="d-block g-color-white g-font-weight-400 text-uppercase mb-3">Hamburg Hats</span>
@@ -1379,7 +1379,7 @@
                     <!-- Article -->
                     <article
                         class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-bluegray-opacity-0_3--after text-center g-px-40 g-py-80"
-                        data-bg-img-src="assets/img-temp/600x400/img3.jpg">
+                        data-bg-img-src="{{asset('assets/img-temp/600x400/img3.jpg')}}">
                       <div class="g-pos-rel g-z-index-1">
                                                     <span
                                                         class="d-block g-color-white g-font-weight-400 text-uppercase mb-3">Glasses</span>

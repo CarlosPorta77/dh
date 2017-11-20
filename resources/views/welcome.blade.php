@@ -1260,5 +1260,4 @@
     </div>
   </div>
   <!-- End News -->
-
 @endsection

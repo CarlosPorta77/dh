@@ -280,7 +280,7 @@
   <div class="g-width-720">
     <div class="row align-items-center">
       <div class="col-sm-6 g-height-350--sm g-bg-size-cover g-bg-pos-top-center g-rounded-left-5"
-           data-bg-img-src="assets/img-temp/300x300/img1.jpg"></div>
+           data-bg-img-src="{{asset('assets/img-temp/300x300/img1.jpg')}}"></div>
 
       <div class="col-sm-6">
         <div class="g-pl-30 g-pl-20--sm g-pr-30 g-py-20">

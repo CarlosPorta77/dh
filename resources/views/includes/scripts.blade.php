@@ -4,6 +4,7 @@
   <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/jquery-migrate/jquery-migrate.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/tether/tether.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
 
   <!-- JS Implementing Plugins -->
@@ -66,6 +67,10 @@
           }], true);
       });
 
+      // Bootstrap tooltip
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
       // initialization of header
       $.HSCore.components.HSHeader.init($('#js-header'));
       $.HSCore.helpers.HSHamburgers.init('.hamburger');
