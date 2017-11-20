@@ -29,7 +29,7 @@
   <!-- Form -->
   <div class="container g-pt-20 g-pb-20">
     <header class="text-center mb-4">
-      <h1 class="h4 g-color-black g-font-weight-400">Nuevo producto</h1>
+      <h1 class="h3 g-color-black g-font-weight-400">Nuevo producto</h1>
     </header>
 
     <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ route('admin.products.store') }}">
@@ -40,15 +40,36 @@
           <!-- name -->
           <div class="form-group g-mb-20">
             <label class="g-mb-10" for="name">Nombre del producto</label>
-            <input id="name" name="name" class="form-control form-control-md rounded-0" type="text" placeholder="Ingresá el nombre del producto">
+            <input
+                id="name"
+                name="name"
+                class="form-control form-control-md rounded-0 {{ $errors->has('name') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
+                type="text"
+                value="{{ old('name') }}"
+                placeholder="Ingresá el nombre del producto"
+            >
+            @if ($errors->has('name'))
+              <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('name') }}</small>
+            @endif
           </div>
-          <!-- End name -->
+
+        <!-- End name -->
         </div>
         <div class="col-sm-6">
           <!-- price -->
           <div class="form-group g-mb-20">
             <label class="g-mb-10" for="price">Precio</label>
-            <input id="price" name="price" class="form-control form-control-md rounded-0" type="number" step="0.01" placeholder="Ingresá el precio de venta">
+            <input
+                id="price"
+                name="price"
+                class="form-control form-control-md rounded-0 {{ $errors->has('price') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
+                type="number"
+                step="0.01"
+                value="{{ old('price') }}"
+                placeholder="Ingresá el precio de venta">
+            @if ($errors->has('price'))
+              <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('price') }}</small>
+            @endif
           </div>
           <!-- End price -->
         </div>
@@ -57,7 +78,18 @@
       <!-- description -->
       <div class="form-group g-mb-20">
         <label class="g-mb-10" for="description">Descripción corta</label>
-        <input id="description" name="description" class="form-control form-control-md rounded-0" type="text" placeholder="Ingresá una descripción abreviada del producto">
+        <input
+            id="description"
+            name="description"
+            class="form-control form-control-md rounded-0 {{ $errors->has('description') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
+            value="{{ old('description') }}"
+            type="text"
+            placeholder="Ingresá una descripción abreviada del producto"
+        >
+        @if ($errors->has('description'))
+          <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('description') }}</small>
+        @endif
+
       </div>
       <!-- End description -->
 

@@ -28,6 +28,11 @@
 
   <!-- Products -->
   <div class="container g-pt-20 g-pb-20">
+    <header class="text-center mb-4">
+      <h1 class="h3 g-color-black g-font-weight-400">Listado de productos</h1>
+    </header>
+
+
     <!-- Striped Rows -->
     <div class="card g-brd-teal rounded-0 g-mb-30">
       <h3 class="card-header g-bg-teal g-brd-transparent g-color-white g-font-size-16 rounded-0 mb-0">

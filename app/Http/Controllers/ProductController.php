@@ -19,8 +19,25 @@ class ProductController extends Controller {
   }
 
   public function store(Request $request) {
-    //dd($request->all());
-    // registrar el nuevo producto en la base de datos
+    //validar
+    $rules    = [
+        'name'        => 'required|min:3',
+        'description' => 'required|min:3|max:200',
+        'price'       => 'required|numeric|min:0',
+    ];
+    $messages = [
+        'name.required'        => 'El nombre es requerido',
+        'name.min'             => 'El nombre debe tener al menos 3 caracteres',
+        'description.required' => 'La descripción corta es requerida',
+        'description.min'      => 'La descripción corta debe tener al menos 3 caracteres',
+        'description.max'      => 'La descripción corta puede tener máximo 200 caracteres',
+        'price.numeric'        => 'Ingrese un precio válido',
+        'price.required'       => 'El precio es requerido',
+        'price.min'            => 'El precio debe ser mayor que cero',
+    ];
+
+    $this->validate($request, $rules, $messages);
+
     $product                   = new Product();
     $product->name             = $request->input('name');
     $product->description      = $request->input('description');
@@ -38,7 +55,25 @@ class ProductController extends Controller {
   }
 
   public function update(Request $request, $id) {
-    //dd($request->all());
+    //validar
+    $rules    = [
+        'name'        => 'required|min:3',
+        'description' => 'required|min:3|max:200',
+        'price'       => 'required|numeric|min:0',
+    ];
+    $messages = [
+        'name.required'        => 'El nombre es requerido',
+        'name.min'             => 'El nombre debe tener al menos 3 caracteres',
+        'description.required' => 'La descripción corta es requerida',
+        'description.min'      => 'La descripción corta debe tener al menos 3 caracteres',
+        'description.max'      => 'La descripción corta puede tener máximo 200 caracteres',
+        'price.numeric'        => 'Ingrese un precio válido',
+        'price.required'       => 'El precio es requerido',
+        'price.min'            => 'El precio debe ser mayor que cero',
+    ];
+
+    $this->validate($request, $rules, $messages);
+
     // registrar el nuevo producto en la base de datos
     $product                   = Product::find($id);
     $product->name             = $request->input('name');
