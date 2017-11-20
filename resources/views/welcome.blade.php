@@ -524,7 +524,7 @@
           <div class="g-px-10">
             <!-- Product -->
             <figure class="g-pos-rel g-mb-20">
-              <img class="img-fluid" data-lazy="https://www.placebear.com/480/700" alt="Image Description">
+              <img class="img-fluid" data-lazy="{{ $product->images->first()->image }}" alt="Image Description">
 
               <figcaption class="w-100 g-bg-primary g-bg-black--hover text-center g-pos-abs g-bottom-0 g-transition-0_2 g-py-5">
                 <a class="g-color-white g-font-size-11 text-uppercase g-letter-spacing-1 g-text-underline--none--hover" href="#!">New Arrival</a>
@@ -539,7 +539,7 @@
                     {{ $product->name }}
                   </a>
                 </h4>
-                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13" href="#!">--Categoria--</a>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13" href="#!">{{$product->category->name}}</a>
                 <span class="d-block g-color-black g-font-size-17">${{$product->price}}</span>
               </div>
               <!-- End Product Info -->
