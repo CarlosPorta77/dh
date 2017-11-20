@@ -60,12 +60,18 @@
                 <a href="#" class="btn btn-md u-btn-none g-color-blue g-py-0 g-mx-0 g-px-5" data-toggle="tooltip" data-placement="top" title="Ver producto">
                   <i class="fa fa-eye"></i>
                 </a>
-                <a href="#" class="btn btn-md u-btn-none g-color-green g-py-0 g-mx-0 g-px-5" data-toggle="tooltip" data-placement="top" title="Editar producto">
+                <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-green g-py-0 g-mx-0 g-px-5" data-toggle="tooltip"
+                   data-placement="top" title="Editar producto">
                   <i class="fa fa-pencil"></i>
                 </a>
-                <a href="#" class="btn btn-md u-btn-none g-color-red g-py-0 g-mx-0 g-px-5" data-toggle="tooltip" data-placement="top" title="Eliminar producto">
-                  <i class="fa fa-trash"></i>
-                </a>
+                <form action="{{ route('admin.products.destroy', ['id' => $product->id]) }}" method="post" class="d-inline">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE') }}
+                  <button type="submit" class="btn btn-md u-btn-none g-color-red g-py-0 g-mx-0 g-px-5 bg-transparent" data-toggle="tooltip"
+                          data-placement="top" title="Eliminar producto" >
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </form>
               </td>
             </tr>
           @endforeach
@@ -78,7 +84,7 @@
       <div class="g-ml-10">
         {!! $products->links('vendor.pagination.bootstrap-4'); !!}
       </div>
-      <a href="{{ url('/admin/products/create') }}" class="btn btn-md u-btn-teal g-mr-10 g-mb-15">Nuevo producto</a>
+      <a href="{{ route('admin.products.create') }}" class="btn btn-md u-btn-teal g-mr-10 g-mb-15">Nuevo producto</a>
     </div>
 
   </div>

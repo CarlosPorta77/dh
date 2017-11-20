@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 class ProductController extends Controller {
   public function index() {
     $products = Product::paginate(5);
+
     return view('admin.products.index')->with(compact('products')); //listado
   }
 
@@ -17,16 +18,42 @@ class ProductController extends Controller {
     return view('admin.products.create'); //formulario de creación
   }
 
-  public function store (Request $request) {
+  public function store(Request $request) {
     //dd($request->all());
     // registrar el nuevo producto en la base de datos
-    $product = new Product();
-    $product->name = $request->input('name');
-    $product->description = $request->input('description');
-    $product->price = $request->input('price');
+    $product                   = new Product();
+    $product->name             = $request->input('name');
+    $product->description      = $request->input('description');
+    $product->price            = $request->input('price');
     $product->long_description = $request->input('long_description');
     $product->save();
 
-    return redirect('/admin/products');
+    return redirect(route('admin.products.index'));
+  }
+
+  public function edit($id) {
+    $product = Product::find($id);
+
+    return view('admin.products.edit', compact('product')); //formulario de creación
+  }
+
+  public function update(Request $request, $id) {
+    //dd($request->all());
+    // registrar el nuevo producto en la base de datos
+    $product                   = Product::find($id);
+    $product->name             = $request->input('name');
+    $product->description      = $request->input('description');
+    $product->price            = $request->input('price');
+    $product->long_description = $request->input('long_description');
+    $product->save();
+
+    return redirect(route('admin.products.index'));
+  }
+
+  public function destroy($id) {
+    $product = Product::find($id);
+    $product->delete();
+
+    return back(); //formulario de creación
   }
 }

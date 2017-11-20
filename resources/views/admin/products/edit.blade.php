@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Nuevo producto')
+@section('title', 'Modificar producto')
 
 @section('content')
   <!-- Breadcrumbs -->
@@ -19,7 +19,7 @@
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-color-primary">
-          <span>Nuevo</span>
+          <span>Modificar</span>
         </li>
       </ul>
     </div>
@@ -29,10 +29,10 @@
   <!-- Form -->
   <div class="container g-pt-20 g-pb-20">
     <header class="text-center mb-4">
-      <h1 class="h4 g-color-black g-font-weight-400">Nuevo producto</h1>
+      <h1 class="h4 g-color-black g-font-weight-400">Modificar producto</h1>
     </header>
 
-    <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ route('admin.products.store') }}">
+    <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ route('admin.products.update', ['id' => $product->id]) }}">
       {{ csrf_field() }}
 
       <div class="row">
@@ -40,7 +40,7 @@
           <!-- name -->
           <div class="form-group g-mb-20">
             <label class="g-mb-10" for="name">Nombre del producto</label>
-            <input id="name" name="name" class="form-control form-control-md rounded-0" type="text" placeholder="Ingresá el nombre del producto">
+            <input id="name" name="name" class="form-control form-control-md rounded-0" type="text" placeholder="Ingresá el nombre del producto" value="{{ $product->name }}">
           </div>
           <!-- End name -->
         </div>
@@ -48,7 +48,7 @@
           <!-- price -->
           <div class="form-group g-mb-20">
             <label class="g-mb-10" for="price">Precio</label>
-            <input id="price" name="price" class="form-control form-control-md rounded-0" type="number" step="0.01" placeholder="Ingresá el precio de venta">
+            <input id="price" name="price" class="form-control form-control-md rounded-0" type="number" step="0.01"  placeholder="Ingresá el precio de venta" value="{{ $product->price }}">
           </div>
           <!-- End price -->
         </div>
@@ -57,7 +57,7 @@
       <!-- description -->
       <div class="form-group g-mb-20">
         <label class="g-mb-10" for="description">Descripción corta</label>
-        <input id="description" name="description" class="form-control form-control-md rounded-0" type="text" placeholder="Ingresá una descripción abreviada del producto">
+        <input id="description" name="description" class="form-control form-control-md rounded-0" type="text" placeholder="Ingresá una descripción abreviada del producto" value="{{ $product->description }}">
       </div>
       <!-- End description -->
 
@@ -65,17 +65,16 @@
       <div class="form-group g-mb-20">
         <label class="g-mb-10" for="long_description">Descripción ampliada</label>
         <textarea id="long_description" name="long_description" class="form-control form-control-md g-resize-none rounded-0" rows="5"
-                  placeholder="Ingresá una descripción ampliada del producto"></textarea>
+                  placeholder="Ingresá una descripción ampliada del producto">{{ $product->long_description }}</textarea>
         <small class="form-text text-muted g-font-size-default g-mt-10">
           {{--<strong>Note:</strong> height of the textarea depends on the rows attribute.--}}
         </small>
       </div>
       <!-- End long_description -->
 
-      <button class="btn btn-lg u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Registrar producto</button>
+      <button class="btn btn-lg u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Guardar cambios</button>
 
       <a href="{{ route('admin.products.index') }}" class="btn btn-lg u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Cancelar</a>
-
     </form>
     <!-- End Form -->
   </div>
