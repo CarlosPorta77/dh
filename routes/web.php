@@ -28,4 +28,5 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
   Route::get('/products/{id}/images', 'ImageController@index')->name('admin.products.images.index'); //listado
   Route::post('/products/{id}/images', 'ImageController@store')->name('admin.products.images.store'); //guardar
   Route::delete('/products/{id}/images', 'ImageController@destroy')->name('admin.products.images.destroy'); //guardar
+  Route::get('/products/{product_id}/images/select/{image_id}', 'ImageController@select')->name('admin.products.images.select'); //guardar
 });

@@ -11,8 +11,7 @@ class ImageController extends Controller {
   public function index($id) {
 
     $product = Product::find($id);
-    $images  = $product->images;
-
+    $images  = $product->images()->orderBy('featured', 'desc')->get();
     return view('admin.products.images.index')->with(compact('product', 'images'));
   }
 
@@ -37,20 +36,32 @@ class ImageController extends Controller {
 
   public function destroy($id) {
     //eliminar el archivo con la imagen
-    $deleted = true;
+    $deleted      = true;
     $productImage = ProductImage::find($id);
 
     if (substr($productImage->image, 0, 4) !== 'http') {
       $fullPath = public_path() . '/images/products/' . $productImage->image;
       //dd($fullPath);
-      $deleted  = File::delete($fullPath);
+      $deleted = File::delete($fullPath);
     }
     if ($deleted) {
       $productImage->delete();
     }
 
     return back();
-    //eliminar el registro de la mag de la DB
+  }
 
+  public function select($product_id, $image_id) {
+    //dump($product_id);
+    //dd($image_id);
+    ProductImage::where('product_id', $product_id)->update([
+        'featured' => false,
+    ]);
+
+    $productImage = ProductImage::find($image_id);
+    $productImage->featured = true;
+    $productImage->save();
+
+    return back();
   }
 }

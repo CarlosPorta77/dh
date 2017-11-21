@@ -60,12 +60,21 @@
                 </form>
               </li>
               <li class="list-inline-item align-middle mx-0">
-                <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover g-font-size-15 rounded-circle" href="#!"
-                   data-toggle="tooltip"
-                   data-placement="top"
-                   title="Add to Wishlist">
-                  <i class="icon-medical-022 u-line-icon-pro"></i>
-                </a>
+                @if($image->featured)
+                  <button type="button" class="btn btn-xxl u-btn-none g-color-teal g-px-5 bg-transparent" data-toggle="tooltip"
+                          data-placement="top" title="Imagen destacaca para el producto">
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                @else
+                  <a class="btn btn-xxl u-btn-none g-color-bluegray g-px-5 bg-transparent"
+                     href="{{ route('admin.products.images.select', ['product_id' => $image->product_id, 'image_id' => $image->id]) }}"
+                     data-toggle="tooltip"
+                     data-placement="top"
+                     title="Destacar imagen">
+                    <i class="fa fa-heart"></i>
+                  </a>
+                @endif
               </li>
             </ul>
             <!-- End Products Icons -->
@@ -78,9 +87,9 @@
 
     <hr class="g-mb-30">
     <form action="" method="post" enctype="multipart/form-data">
-    {{ csrf_field() }}
+      {{ csrf_field() }}
 
-      <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+      <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
       <div class="form-group">
         <label for="exampleFormControlFile1">Seleccionar imagen a subir</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1" name="photo" required>
