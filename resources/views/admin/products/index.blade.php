@@ -97,7 +97,11 @@
             <!-- Opciones -->
             <div class="col-3 col-md-2">
               <span class="d-block d-md-none font-weight-bold">Opciones </span>
-              <a href="#" class="btn btn-md u-btn-none g-color-blue g-py-0 g-mx-0 g-px-5" data-toggle="tooltip" data-placement="top" title="Ver producto">
+              <a href="{{ route('user.products.show', ['id' => $product->id]) }}"
+                 class="btn btn-md u-btn-none g-color-blue g-py-0 g-mx-0 g-px-5"
+                 data-toggle="tooltip"
+                 data-placement="top"
+                 title="Ver producto">
                 <i class="fa fa-eye"></i>
               </a>
               <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-green g-py-0 g-mx-0 g-px-5" data-toggle="tooltip"

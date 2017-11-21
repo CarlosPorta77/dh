@@ -18,7 +18,7 @@
   </section>
   <!-- End Breadcrumbs -->
 
-  @include('includes.revolution-slider')
+  {{--@include('includes.revolution-slider')--}}
 
   <!-- Features -->
   <div class="g-brd-bottom g-brd-gray-light-v4">
@@ -152,6 +152,14 @@
                      data-placement="top"
                      title="Agregar al carrito">
                     <i class="icon-finance-100 u-line-icon-pro"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item align-middle mx-0">
+                  <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover g-font-size-15 rounded-circle" href="#!"
+                     data-toggle="tooltip"
+                     data-placement="top"
+                     title="Ver detalles">
+                    <i class="icon-education-045 u-line-icon-pro"></i>
                   </a>
                 </li>
                 <li class="list-inline-item align-middle mx-0">

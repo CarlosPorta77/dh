@@ -16,8 +16,10 @@ Route::get('/', 'TestController@welcome')->name('welcome');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/products/{id}', 'ProductController@show')->name('user.products.show');
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function () {
   Route::get('/products', 'ProductController@index')->name('admin.products.index'); // listar
   Route::get('/products/create', 'ProductController@create')->name('admin.products.create'); //crear
   Route::post('/products', 'ProductController@store')->name('admin.products.store'); //guardar
