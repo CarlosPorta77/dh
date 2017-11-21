@@ -109,7 +109,6 @@
       <a href="{{ route('admin.products.index') }}" class="btn btn-lg u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Cancelar</a>
 
     </form>
-    <!-- End Form -->
   </div>
-  <!-- End Products -->
+  <!-- End Form -->
 @endsection

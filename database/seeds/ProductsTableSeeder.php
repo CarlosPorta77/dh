@@ -19,11 +19,11 @@ class ProductsTableSeeder extends Seeder {
 
     $categories = factory(Category::class, 5)->create();
     $categories->each(function($category) {
-      $products = factory(Product::class, 20)->make();
+      $products = factory(Product::class, 8)->make();
       $category->products()->saveMany($products);
 
       $products->each(function($p) {
-        $images = factory(ProductImage::class, 5)->make();
+        $images = factory(ProductImage::class, 3)->make();
         $p->images()->saveMany($images);
       });
     });

@@ -8,7 +8,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+  <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CPlayfair+Display%7CRaleway%7CSpectral%7CRubik">

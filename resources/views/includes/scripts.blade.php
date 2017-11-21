@@ -13,6 +13,8 @@
   <script src="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.js') }}"></script>
   <script src="{{ asset('assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/appear.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery.filer/js/jquery.filer.min.js') }}"></script>
+
 
   <!-- JS Revolution Slider -->
   <script src="{{ asset('assets/vendor/revolution-slider/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
@@ -39,6 +41,9 @@
   <script src="{{ asset('assets/js/components/hs.carousel.js') }}"></script>
   <script src="{{ asset('assets/js/components/hs.go-to.js') }}"></script>
   <script src="{{ asset('assets/js/components/hs.count-qty.js') }}"></script>
+  <script src="{{ asset('assets/js/helpers/hs.focus-state.js') }}"></script>
+  <script src="{{ asset('assets/js/components/hs.file-attachement.js') }}"></script>
+
 
   <!-- JS Customization -->
   <script src="{{ asset('assets/js/custom.js') }}"></script>
@@ -198,6 +203,12 @@
 
           RsTypewriterAddOn(tpj, revapi1014);
       });
+      $(document).on('ready', function () {
+          // initialization of forms
+          $.HSCore.components.HSFileAttachment.init('.js-file-attachment');
+          $.HSCore.helpers.HSFocusState.init();
+      });
+
   </script>
 </div>
 <!-- End Scripts -->

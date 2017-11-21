@@ -104,9 +104,9 @@
       </div>
       <!-- End long_description -->
 
-      <button class="btn btn-lg u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Guardar cambios</button>
+      <button class="btn btn-md u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Guardar cambios</button>
 
-      <a href="{{ route('admin.products.index') }}" class="btn btn-lg u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Cancelar</a>
+      <a href="{{ route('admin.products.index') }}" class="btn btn-md u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Cancelar</a>
     </form>
     <!-- End Form -->
   </div>

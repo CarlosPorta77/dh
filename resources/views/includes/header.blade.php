@@ -4,8 +4,9 @@
   <div class="u-header__section g-brd-bottom g-brd-gray-light-v4 g-bg-black g-transition-0_3">
     <div class="container">
       <div class="row justify-content-between align-items-center g-mx-0--lg">
+
+        <!-- Social Icons -->
         <div class="col-sm-auto g-hidden-sm-down">
-          <!-- Social Icons -->
           <ul class="list-inline g-py-14 mb-0">
             <li class="list-inline-item">
               <a class="g-color-white-opacity-0_8 g-color-primary--hover g-pa-3" href="#">
@@ -28,15 +29,18 @@
               </a>
             </li>
           </ul>
-          <!-- End Social Icons -->
         </div>
+        <!-- End Social Icons -->
 
+        <!-- Teléfono -->
         <div
             class="col-sm-auto g-hidden-sm-down g-color-white-opacity-0_6 g-font-weight-400 g-pl-15 g-pl-0--sm g-py-14">
           <i class="icon-communication-163 u-line-icon-pro g-font-size-18 g-valign-middle g-color-white-opacity-0_8 g-mr-10 g-mt-minus-2"></i>
           0800-77-SUSHI(78744) o 4584-4777
         </div>
+        <!-- End Teléfono -->
 
+        <!-- Account y Faqs -->
         <div class="col-sm-auto g-pos-rel g-py-14">
           <!-- List -->
           <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
@@ -44,7 +48,7 @@
             <li class="list-inline-item">
               <a id="account-dropdown-invoker-2"
                  class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover"
-                 href="#!"
+                 href="{{ route('home') }}"
                  aria-controls="account-dropdown-2"
                  aria-haspopup="true"
                  aria-expanded="false"
@@ -61,42 +65,52 @@
                   class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-160 g-pb-5 g-mt-19 g-z-index-2"
                   aria-labelledby="account-dropdown-invoker-2">
                 @if (Auth::guest())
-                  <li>
-                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="{{ route('login') }}">
-                      Ingreso
-                    </a>
-                  </li>
-                  <li>
-                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="{{ route('register') }}">
-                      Registración
-                    </a>
-                  </li>
+                {{--No inició sesión--}}
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="{{ route('login') }}">
+                    Ingreso
+                  </a>
+                </li>
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="{{ route('register') }}">
+                    Registración
+                  </a>
+                </li>
                 @else
+                {{--Inició sesión--}}
+                @if (auth()->user()->admin)
                   <li>
                     <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="page-wishlist-1.html">
-                      Listas de deseos
+                       href="{{ route('admin.products.index') }}">
+                      Gestionar productos
                     </a>
                   </li>
-                  <li>
-                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="page-orders-1.html">
-                      Órdenes de compra
-                    </a>
-                  </li>
-                  <li>
-                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="{{ route('logout') }}"
-                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                      Cerrar sesión
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      {{ csrf_field() }}
-                    </form>
+                @endif
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="page-wishlist-1.html">
+                    Listas de deseos
+                  </a>
+                </li>
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="page-orders-1.html">
+                    Órdenes de compra
+                  </a>
+                </li>
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="{{ route('logout') }}"
+                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    Cerrar sesión
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
 
-                  </li>
+                </li>
                 @endif
 
               </ul>
@@ -112,7 +126,9 @@
           </ul>
           <!-- End List -->
         </div>
+        <!-- End Account y Faqs -->
 
+        <!-- Cart y search -->
         <div class="col-sm-auto g-pr-15 g-pr-0--sm">
           <!-- Basket -->
           <div class="u-basket d-inline-block g-z-index-3">
@@ -129,9 +145,8 @@
                  data-dropdown-hide-on-scroll="false"
                  data-dropdown-animation-in="fadeIn"
                  data-dropdown-animation-out="fadeOut">
-                                    <span
-                                        class="u-badge-v1--sm g-color-white g-bg-primary g-font-size-11 g-line-height-1_4 g-rounded-50x g-pa-4"
-                                        style="top: 7px !important; right: 3px !important;">5</span>
+              <span class="u-badge-v1--sm g-color-white g-bg-primary g-font-size-11 g-line-height-1_4 g-rounded-50x g-pa-4"
+                  style="top: 7px !important; right: 3px !important;">5</span>
                 <i class="icon-hotel-restaurant-105 u-line-icon-pro"></i>
               </a>
             </div>
@@ -295,6 +310,8 @@
           </div>
           <!-- End Search -->
         </div>
+        <!-- End Cart y search -->
+
       </div>
     </div>
   </div>
@@ -321,7 +338,7 @@
         <!-- End Responsive Toggle Button -->
 
         <!-- Logo -->
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ route('welcome') }}">
           <img src="{{ asset('images/logo-s.jpg') }}" alt="Sushi Furusato">
         </a>
         <!-- End Logo -->
