@@ -9,7 +9,7 @@ class ProductController extends Controller {
   public function show($id) {
     $product = Product::find($id);
 
-    return "Mostrar datos de producto con id: $id";
+    return view('products.show')->with(compact('product'));
 
   }
 }

@@ -86,8 +86,8 @@ class ProductController extends Controller {
     return redirect(route('admin.products.index'));
   }
 
-  public function destroy($id) {
-    $product = Product::find($id);
+  public function destroy(Request $request) {
+    $product = Product::find($request->$id);
     $product->delete();
 
     return back(); //formulario de creación

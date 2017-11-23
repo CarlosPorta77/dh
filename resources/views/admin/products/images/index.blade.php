@@ -46,28 +46,31 @@
             <!-- Products Icons -->
             <ul class="list-inline media-body text-right">
               <li class="list-inline-item align-middle mx-0">
-                <form action="{{ route('admin.products.images.destroy', ['id' => $image->id]) }}" method="post" class="d-inline">
+                <form action="{{ route('admin.products.images.destroy', ['id' => $image->id]) }}" method="post"
+                      class="d-inline">
                   {{ csrf_field() }}
                   {{ method_field('DELETE') }}
                   <button
                       type="submit"
-                      class="btn btn-xs u-btn-red g-font-size-12 text-uppercase g-py-6 g-px-25 g-mb-10"
+                      {{--class="btn btn-xs u-btn-red g-font-size-12 text-uppercase g-py-6 g-px-25 g-mb-10"--}}
+                      class="btn btn-lg u-btn-none g-color-darkred bg-transparent g-py-0 g-my-0 d-inline"
                       data-toggle="tooltip"
                       data-placement="top"
                       title="Eliminar imagen">
-                    Eliminar imagen
+                    <i class="fa fa-trash"></i>
                   </button>
                 </form>
               </li>
               <li class="list-inline-item align-middle mx-0">
                 @if($image->featured)
-                  <button type="button" class="btn btn-xxl u-btn-none g-color-teal g-px-5 bg-transparent" data-toggle="tooltip"
-                          data-placement="top" title="Imagen destacaca para el producto">
+                  <a href="#"
+                     class="btn btn-lg u-btn-none g-color-teal"
+                     data-toggle="tooltip"
+                     data-placement="top" title="Imagen destacaca para el producto">
                     <i class="fa fa-heart"></i>
-                  </button>
-
+                  </a>
                 @else
-                  <a class="btn btn-xxl u-btn-none g-color-bluegray g-px-5 bg-transparent"
+                  <a class="btn btn-lg u-btn-none g-color-gray-dark-v5 g-color-primary--hover"
                      href="{{ route('admin.products.images.select', ['product_id' => $image->product_id, 'image_id' => $image->id]) }}"
                      data-toggle="tooltip"
                      data-placement="top"
@@ -92,14 +95,25 @@
       <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
       <div class="form-group">
         <label for="exampleFormControlFile1">Seleccionar imagen a subir</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="photo" required>
+        <input
+            type="file"
+            class="form-control-file {{ $errors->has('photo') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
+            id="exampleFormControlFile1"
+            name="photo"
+            required>
+        @if ($errors->has('photo'))
+          <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('photo') }}</small>
+        @endif
+
       </div>
 
       <button type="submit"
-              class="btn btn-md u-btn-teal g-font-size-12 text-uppercase g-mr-10 g-py-12 g-px-25 g-mb-10">Subir nueva imágen
+              class="btn btn-md u-btn-teal g-font-size-12 text-uppercase g-mr-10 g-py-12 g-px-25 g-mb-10">Subir nueva
+        imágen
       </button>
       <a href="{{ route('admin.products.index') }}"
-         class="btn btn-md u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25 g-mb-10">Volver al listado de productos</a>
+         class="btn btn-md u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25 g-mb-10">Volver al listado de
+        productos</a>
     </form>
     <div class="g-mb-20"></div>
   </div>

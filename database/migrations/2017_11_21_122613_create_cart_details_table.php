@@ -26,7 +26,7 @@ class CreateCartDetailsTable extends Migration {
           $table->string('description');
           $table->float('quantity', 5, 2);
           $table->decimal('price', 12, 2);
-          $table->double('discount', 5, 2)->nullable(); // %
+          $table->double('discount', 5, 2)->default(0); // %
           $table->text('notes')->nullable();
 
           $table->timestamps();

@@ -7,25 +7,42 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\ProductImage;
 use File;
+use Intervention\Image\Facades\Image;
 
 class ImageController extends Controller {
   public function index($id) {
 
     $product = Product::find($id);
     $images  = $product->images()->orderBy('featured', 'desc')->get();
+
     return view('admin.products.images.index')->with(compact('product', 'images'));
   }
 
   public function store(Request $request, $id) {
 
+    $rules    = [
+        'photo' => 'image',
+    ];
+    $messages = [
+        'photo.image'        => 'El archivo debe ser una imagen. (.jpg, .jpeg, .png o .gif)',
+    ];
+
+    $this->validate($request, $rules, $messages);
+
     // guardar la imagen en el server
-    $file     = $request->file('photo');
-    $path     = public_path() . '/images/products';
-    $fileName = uniqid() . $file->getClientOriginalName();
-    $moved    = $file->move($path, $fileName);
+    $path     = public_path() . '/images/products/';
+    $fileName = uniqid() . $request->file('photo')->getClientOriginalName();
+    //$moved    = $file->move($path, $fileName);
+
+    $img= Image::make($request->file('photo')); // Obtengo la imagen
+    $img->resize(1024, null, function ($constraint) { // le cambio el tamaño a width: 1024, heigh: auto
+      $constraint->aspectRatio(); // mantengo el ratio de la imagen
+      $constraint->upsize(); // no dejo que escale para arriba
+    });
+    $img->save($path . $fileName, 85);
 
     // crear registro en la tabla de product_images
-    if ($moved) {
+    if ($img) {
       $productImage             = new ProductImage();
       $productImage->image      = $fileName;
       $productImage->product_id = $id;
@@ -59,7 +76,7 @@ class ImageController extends Controller {
         'featured' => false,
     ]);
 
-    $productImage = ProductImage::find($image_id);
+    $productImage           = ProductImage::find($image_id);
     $productImage->featured = true;
     $productImage->save();
 

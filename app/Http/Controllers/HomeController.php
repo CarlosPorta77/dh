@@ -19,7 +19,14 @@ class HomeController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        return view('home');
-    }
+  public function index() {
+    return view('home');
+  }
+  public function checkout() {
+    return view('checkout');
+  }
+
+  public function cart() {
+    return view('cart');
+  }
 }

@@ -65,53 +65,65 @@
                   class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-160 g-pb-5 g-mt-19 g-z-index-2"
                   aria-labelledby="account-dropdown-invoker-2">
                 @if (Auth::guest())
-                {{--No inició sesión--}}
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="{{ route('login') }}">
-                    Ingreso
-                  </a>
-                </li>
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="{{ route('register') }}">
-                    Registración
-                  </a>
-                </li>
-                @else
-                {{--Inició sesión--}}
-                @if (auth()->user()->admin)
+                  {{--No inició sesión--}}
                   <li>
                     <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="{{ route('admin.products.index') }}">
-                      Gestionar productos
+                       href="{{ route('login') }}">
+                      Ingreso
                     </a>
                   </li>
-                @endif
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="page-wishlist-1.html">
-                    Listas de deseos
-                  </a>
-                </li>
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="page-orders-1.html">
-                    Órdenes de compra
-                  </a>
-                </li>
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="{{ route('logout') }}"
-                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    Cerrar sesión
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                  </form>
+                  <li>
+                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                       href="{{ route('register') }}">
+                      Registración
+                    </a>
+                  </li>
+                @else
+                  {{--Inició sesión--}}
+                  <li>
+                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                       href="{{ route('cart') }}">
+                      Carrito de compras
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                       href="{{ route('home') }}">
+                      Panel de control
+                    </a>
+                  </li>
+                  @if (auth()->user()->admin)
+                    <li>
+                      <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                         href="{{ route('admin.products.index') }}">
+                        Gestionar productos
+                      </a>
+                    </li>
+                    @endif
+                    <li>
+                      <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                         href="page-wishlist-1.html">
+                        Listas de deseos
+                      </a>
+                    </li>
+                    <li>
+                      <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                         href="page-orders-1.html">
+                        Órdenes de compra
+                      </a>
+                    </li>
+                    <li>
+                      <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                         href="{{ route('logout') }}"
+                         onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        Cerrar sesión
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                      </form>
 
-                </li>
-                @endif
+                    </li>
+                  @endif
 
               </ul>
             </li>
@@ -146,7 +158,7 @@
                  data-dropdown-animation-in="fadeIn"
                  data-dropdown-animation-out="fadeOut">
               <span class="u-badge-v1--sm g-color-white g-bg-primary g-font-size-11 g-line-height-1_4 g-rounded-50x g-pa-4"
-                  style="top: 7px !important; right: 3px !important;">5</span>
+                    style="top: 7px !important; right: 3px !important;">5</span>
                 <i class="icon-hotel-restaurant-105 u-line-icon-pro"></i>
               </a>
             </div>

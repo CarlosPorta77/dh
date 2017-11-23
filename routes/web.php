@@ -16,7 +16,13 @@ Route::get('/', 'TestController@welcome')->name('welcome');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/checkout', 'HomeController@checkout')->name('checkout');
+Route::get('/cart', 'HomeController@cart')->name('cart');
+
 Route::get('/products/{id}', 'ProductController@show')->name('user.products.show');
+
+Route::post('/cart/', 'CartDetailController@store')->name('user.cart.store');
+Route::delete('/cart', 'CartDetailController@destroy')->name('user.cart.destroy');
 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function () {

@@ -21,9 +21,10 @@
   <!-- Profile Settings List -->
   <ul class="list-unstyled mb-0">
     <li class="g-py-3">
-      <a class="d-block align-middle u-link-v5 g-color-text g-color-primary--hover g-bg-gray-light-v5--hover rounded g-pa-3" href="page-orders-1.html">
+      <a class="d-block align-middle u-link-v5 g-color-text g-color-primary--hover g-bg-gray-light-v5--hover rounded g-pa-3  @yield('carrito-de-compras')"
+         href="{{route ('cart')}}">
         <span class="u-icon-v1 g-color-gray-dark-v5 mr-2"><i class="icon-finance-100 u-line-icon-pro u-line-icon-pro"></i></span>
-        Carrito
+        Carrito de compras
       </a>
     </li>
     <li class="g-py-3">

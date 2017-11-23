@@ -87,9 +87,9 @@
                   <span class="d-md-none font-weight-bold">Cat: </span>
                   {{ ($product->category ? $product->category->name : 'General')}}
                 </div>
-                <div class="col-md-2 col-xs-12 ">
+                <div class="col-md-2 col-xs-12 text-md-right">
                   <span class="d-md-none font-weight-bold">Precio: </span>
-                  {{ $product->price }}
+                  $ {{ number_format($product->price, 2) }}
                 </div>
               </div>
             </div>
@@ -105,10 +105,10 @@
                 <i class="fa fa-eye"></i>
               </a>
               <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-green g-py-0 g-mx-0 g-px-5" data-toggle="tooltip"
-                 data-placement="top" title="Editar producto">
+                 data-placement="top" title="Editar">
                 <i class="fa fa-pencil"></i>
               </a>
-              <a href="{{ route('admin.products.images.index', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-orange g-py-0 g-mx-0 g-px-5" data-toggle="tooltip" data-placement="top" title="Imágenes del producto">
+              <a href="{{ route('admin.products.images.index', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-orange g-py-0 g-mx-0 g-px-5" data-toggle="tooltip" data-placement="top" title="Ver imágenes">
                 <i class="fa fa-image"></i>
               </a>
 
@@ -116,7 +116,7 @@
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <button type="submit" class="btn btn-md u-btn-none g-color-red g-py-0 g-mx-0 g-px-5 bg-transparent" data-toggle="tooltip"
-                        data-placement="top" title="Eliminar producto">
+                        data-placement="top" title="Eliminar">
                   <i class="fa fa-trash"></i>
                 </button>
               </form>

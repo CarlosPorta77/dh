@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration {
           $table->string('description');
           $table->text('long_description')->nullable();
           $table->float('price', 12, 2);
+          $table->integer('stock')->nullable();
 
           // Foreign key
           $table->integer('category_id')->unsigned()->nullable();

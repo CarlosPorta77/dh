@@ -15,6 +15,7 @@ class CreateCategoriesTable extends Migration {
         function (Blueprint $table) {
           $table->increments('id');
 
+          $table->integer('orden')->nullable();
           $table->string('name');
           $table->string('description')->nullable();
           $table->string('image')->nullable();
