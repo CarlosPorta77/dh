@@ -9,11 +9,11 @@
     <div class="container">
       <ul class="u-list-inline">
         <li class="list-inline-item g-mr-5">
-          <a class="u-link-v5 g-color-text" href="{{ route('home') }}">Home</a>
+          <a class="u-link-v5 g-color-text" href="{{ route('welcome') }}">Home</a>
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-mr-5">
-          <a class="u-link-v5 g-color-text" href="#">Panel de control</a>
+          <a class="u-link-v5 g-color-text" href="{{ route('home') }}">Panel de control</a>
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-color-primary">
@@ -24,8 +24,10 @@
   </section>
   <!-- End Breadcrumbs -->
 
+  <!-- Flash notifications -->
+  @include('includes.flash')
+  <!-- End Flash notifications -->
 
-  <!--  -->
   <div class="container g-pt-20 g-pb-20">
 
     <header class="text-center mb-4">
@@ -43,7 +45,7 @@
       <div class="col-lg-9 g-mb-50">
         <!-- Products Block -->
         <div class="rounded g-brd-around g-brd-gray-light-v4 g-overflow-x-scroll g-overflow-x-visible--lg g-pa-30">
-          <table class="text-center w-100">
+          <table class="text-center w-100 table-responsive">
             <thead class="h6 g-brd-bottom g-brd-gray-light-v4 g-color-black text-uppercase">
             <tr>
               <th class="g-font-weight-500 text-left g-pb-20">Producto</th>
@@ -68,21 +70,20 @@
                     </ul>
                   </div>
                 </td>
-                <td class="g-color-gray-dark-v2 g-font-size-13">$ {{ number_format($detail->price, 2) }}</td>
-                <td>
-                  <div>
-                    <div class="input-group u-quantity-v1 g-width-80 g-brd-primary--focus">
-                      <input class="form-control text-center g-font-size-13 rounded-0 g-pa-0 g-mr-10" type="text" value="{{ $detail->quantity }}">
-                      <span class="g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer" data-toggle="tooltip" title="Modificar cantidad">
-                        <i class="mt-auto fa fa-pencil"></i>
-                      </span>
-
-                    </div>
-                  </div>
-
-                </td>
+                <td class="g-color-gray-dark-v2 g-font-size-13">${{ number_format($detail->price, 2) }}</td>
+                <td class="g-color-gray-dark-v2 g-font-size-13">{{ number_format($detail->quantity, 0) }}</td>
+                {{--<td>--}}
+                  {{--<div>--}}
+                    {{--<div class="input-group u-quantity-v1 g-width-80 g-brd-primary--focus">--}}
+                      {{--<input class="form-control text-center g-font-size-13 rounded-0 g-pa-0 g-mr-10" type="text" value="{{ $detail->quantity }}">--}}
+                      {{--<span class="g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer" data-toggle="tooltip" title="Modificar cantidad">--}}
+                        {{--<i class="mt-auto fa fa-pencil"></i>--}}
+                      {{--</span>--}}
+                    {{--</div>--}}
+                  {{--</div>--}}
+                {{--</td>--}}
                 <td class="text-right g-color-black">
-                  <span class="g-color-gray-dark-v2 g-font-size-13 g-mr-6">$ {{ number_format($detail->price * $detail->quantity, 2) }}</span>
+                  <span class="g-color-gray-dark-v2 g-font-size-13 g-mr-6">${{ number_format($detail->price * $detail->quantity, 2) }}</span>
                   <a class="u-link-v5 g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer g-mr-6"
                      data-toggle="tooltip" data-placement="top" title="Ver detalles"
                      target="_blank"
@@ -97,27 +98,43 @@
 
                     <input type="hidden" name="cart_detail_id" value="{{$detail->id}}">
                     <button type="submit"
-                       class="btn u-btn-none g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer g-py-0 g-mx-0 g-px-5 bg-transparent"
-                       data-toggle="tooltip" data-placement="top" title="Eliminar">
+                            class="btn u-btn-none g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer g-py-0 g-mx-0 g-px-5 bg-transparent"
+                            data-toggle="tooltip" data-placement="top" title="Eliminar">
                       <i class="fa fa-trash"></i>
                     </button>
                   </form>
 
                   {{--<a--}}
-                      {{--href="{{route('user.cart.delete', ['id', $detail->id])}}"--}}
-                      {{--class="g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer" data-toggle="tooltip" title="Eliminar">--}}
-                        {{--<i class="mt-auto fa fa-trash"></i>--}}
-                   {{--</a>--}}
+                  {{--href="{{route('user.cart.delete', ['id', $detail->id])}}"--}}
+                  {{--class="g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer" data-toggle="tooltip" title="Eliminar">--}}
+                  {{--<i class="mt-auto fa fa-trash"></i>--}}
+                  {{--</a>--}}
                 </td>
               </tr>
             @endforeach
 
             <!-- End Item-->
 
+            <tr>
+              <td colspan="4">
+                <div class="d-flex justify-content-between g-mt-10">
+                  <div class="g-ml-10">
+                    <p class="g-color-gray-dark-v4 g-font-size-16 g-mt-10">Items: {{ auth()->user()->cart->details->count() }}. Total: ${{ number_format(auth()->user()->cart->total, 2) }}</p>
+                  </div>
+                  <form action="{{ route('user.cart.checkout1') }}" method="get">
+                  {{--{{ csrf_field() }}--}}
+
+                    @if (auth()->user()->cart->details->count() > 0)
+                    <button type="submit"
+                       class="btn btn-md u-btn-black g-brd-primary--hover g-bg-primary--hover g-mr-10 g-mb-15 text-uppercase rounded g-font-size-12 ">Realizar pedido<i class="fa fa-check  g-font-size-14 g-ml-6"></i> </button>
+                      @endif
+                  </form>
+                </div>
+              </td>
+            </tr>
+
             </tbody>
           </table>
-          <p class="h5 g-color-gray-dark-v4 g-mt-10">Cantidad de ítems:  {{ auth()->user()->cart->details->count() }}.
-          </p>
         </div>
         <!-- End Products Block -->
       </div>

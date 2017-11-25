@@ -2,133 +2,13 @@
 <footer class="g-bg-main-light-v1">
   <!-- Content -->
   <div class="g-brd-bottom g-brd-secondary-light-v1">
-    <div class="container g-pt-100">
+    <div class="container g-pt-20">
       <div class="row justify-content-start g-mb-30 g-mb-0--md">
-        <div class="col-md-5 g-mb-30">
-          <h2 class="h5 g-color-gray-light-v3 mb-4">Products</h2>
-
-          <div class="row">
-            <div class="col-4 g-mb-20">
-              <!-- Links -->
-              <ul class="list-unstyled g-font-size-13 mb-0">
-                <li class="g-mb-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">SmartPhone</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Laptop</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover"
-                     href="#!">Mouse</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Monitor</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover"
-                     href="#!">Watch</a>
-                </li>
-              </ul>
-              <!-- End Links -->
-            </div>
-
-            <div class="col-4 g-mb-20">
-              <!-- Links -->
-              <ul class="list-unstyled g-font-size-13 mb-0">
-                <li class="g-mb-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Tablet</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Accessorie</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Mouses
-                    Pad</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Handset</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Phablet</a>
-                </li>
-              </ul>
-              <!-- End Links -->
-            </div>
-
-            <div class="col-4 g-mb-20">
-              <!-- Links -->
-              <ul class="list-unstyled g-font-size-13 mb-0">
-                <li class="g-mb-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Speakers</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Camera</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Play
-                    Station</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover"
-                     href="#!">Xbox</a>
-                </li>
-              </ul>
-              <!-- End Links -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3 g-mb-30 g-mb-0--sm">
-          <h2 class="h5 g-color-gray-light-v3 mb-4">Brands</h2>
-
-          <div class="row">
-            <div class="col-6 g-mb-20">
-              <!-- Links -->
-              <ul class="list-unstyled g-font-size-13 mb-0">
-                <li class="g-mb-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Logitech</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Samsung</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Microsoft</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover"
-                     href="#!">Apple</a>
-                </li>
-              </ul>
-              <!-- End Links -->
-            </div>
-
-            <div class="col-6 g-mb-20">
-              <!-- Links -->
-              <ul class="list-unstyled g-font-size-13 mb-0">
-                <li class="g-mb-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Huawei</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="#!">Motorola</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover"
-                     href="#!">Sony</a>
-                </li>
-                <li class="g-my-10">
-                  <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover"
-                     href="#!">Nokia</a>
-                </li>
-              </ul>
-              <!-- End Links -->
-            </div>
-          </div>
-        </div>
 
         <div class="col-sm-5 col-md-3 ml-auto g-mb-30 g-mb-0--sm">
           <h2 class="h5 g-color-gray-light-v3 mb-4">Contacto</h2>
 
-          <!-- Links -->
+          <!-- Contact -->
           <ul class="list-unstyled g-color-gray-dark-v5 g-font-size-13">
             <li class="media my-3">
               <i class="d-flex mt-1 mr-3 icon-hotel-restaurant-235 u-line-icon-pro"></i>
@@ -151,7 +31,7 @@
               </div>
             </li>
           </ul>
-          <!-- End Links -->
+          <!-- End Contact -->
         </div>
       </div>
 
@@ -161,7 +41,7 @@
           <h2 class="h5 g-color-gray-light-v3 mb-4">Subscribite</h2>
 
           <!-- Subscribe Form -->
-          <form class="input-group u-shadow-v19 rounded">
+          <form class="input-group u-shadow-v19 rounded" action="{{ route('soon') }}">
             <input
                 class="form-control g-brd-none g-color-gray-dark-v5 g-bg-main-light-v2 g-bg-main-light-v2--focus g-placeholder-gray-dark-v3 rounded g-px-20 g-py-8"
                 type="email" placeholder="Ingresá tu email">
@@ -181,28 +61,28 @@
           <ul class="list-inline mb-50">
             <li class="list-inline-item g-mr-2">
               <a class="u-icon-v1 u-icon-slide-up--hover g-color-gray-dark-v4 g-color-white--hover g-bg-facebook--hover rounded"
-                 href="#!">
+                 href="{{ route('soon') }}">
                 <i class="g-font-size-18 g-line-height-1 u-icon__elem-regular fa fa-facebook"></i>
                 <i class="g-color-white g-font-size-18 g-line-height-0_8 u-icon__elem-hover fa fa-facebook"></i>
               </a>
             </li>
             <li class="list-inline-item g-mx-2">
               <a class="u-icon-v1 u-icon-slide-up--hover g-color-gray-dark-v4 g-color-white--hover g-bg-google-plus--hover rounded"
-                 href="#!">
+                 href="{{ route('soon') }}">
                 <i class="g-font-size-18 g-line-height-1 u-icon__elem-regular fa fa-google-plus"></i>
                 <i class="g-color-white g-font-size-18 g-line-height-0_8 u-icon__elem-hover fa fa-google-plus"></i>
               </a>
             </li>
             <li class="list-inline-item g-mx-2">
               <a class="u-icon-v1 u-icon-slide-up--hover g-color-gray-dark-v4 g-color-white--hover g-bg-twitter--hover rounded"
-                 href="#!">
+                 href="{{ route('soon') }}">
                 <i class="g-font-size-18 g-line-height-1 u-icon__elem-regular fa fa-twitter"></i>
                 <i class="g-color-white g-font-size-18 g-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i>
               </a>
             </li>
             <li class="list-inline-item g-mx-2">
               <a class="u-icon-v1 u-icon-slide-up--hover g-color-gray-dark-v4 g-color-white--hover g-bg-instagram--hover rounded"
-                 href="#!">
+                 href="{{ route('soon') }}">
                 <i class="g-font-size-18 g-line-height-1 u-icon__elem-regular fa fa-instagram"></i>
                 <i class="g-color-white g-font-size-18 g-line-height-0_8 u-icon__elem-hover fa fa-instagram"></i>
               </a>
@@ -220,7 +100,7 @@
   <div class="container g-pt-30 g-pb-10">
     <div class="row justify-content-between align-items-center">
       <div class="col-md-6 g-mb-20">
-        <p class="g-font-size-13 mb-0">2017 © NHT. Todos los derechos reservados.</p>
+        <p class="g-font-size-13 mb-0">2017 ©CP-NHT. Todos los derechos reservados.</p>
       </div>
 
       <div class="col-md-6 text-md-right g-mb-20">

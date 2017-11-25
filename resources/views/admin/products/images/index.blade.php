@@ -26,10 +26,14 @@
   </section>
   <!-- End Breadcrumbs -->
 
+  <!-- Flash notifications -->
+  @include('includes.flash')
+  <!-- End Flash notifications -->
+
   <!-- Products -->
   <div class="container g-pt-20 g-pb-20">
     <header class="text-center mb-4">
-      <h1 class="h3 g-color-black g-font-weight-400">Imágenes del producto: "{{ $product->name }}"</h1>
+      <h1 class="h3 g-color-black g-font-weight-400">{{ $product->name }}</h1>
     </header>
 
     <!-- Products -->

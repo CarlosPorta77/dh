@@ -58,7 +58,7 @@
                   <i class="icon-media-094 u-line-icon-pro"></i>
                 </span>
                 <input
-                    class="form-control g-color-black g-bg-white g-bg-white--focus g-rounded-left-0 g-rounded-right-3 g-py-15 g-px-15 {{ $errors->has('email') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }} d-block"
+                    class="form-control g-color-black g-bg-white g-bg-white--focus g-rounded-left-0 g-rounded-right-3 g-py-15 g-px-15 {{ $errors->has('password') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }} d-block"
                     id="password"
                     type="password"
                     name="password"

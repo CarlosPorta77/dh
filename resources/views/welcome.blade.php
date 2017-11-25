@@ -12,7 +12,7 @@
     <div class="container">
       <ul class="u-list-inline">
         <li class="list-inline-item g-mr-5">
-          <a class="u-link-v5 g-color-text" href="#!">Home</a>
+          <a class="u-link-v5 g-color-text" href="{{route('welcome')}}">Home</a>
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-color-primary">
@@ -24,7 +24,7 @@
   <!-- End Breadcrumbs -->
 
   <!-- Revolution Slider -->
-  {{--    @include('includes.welcome.revolution-slider')--}}
+      @include('includes.welcome.revolution-slider')
   <!-- End Revolution Slider -->
 
   <!-- Features -->
@@ -82,16 +82,18 @@
 
               <!-- Products Icons -->
               <ul class="list-inline media-body text-right">
-                <li class="list-inline-item align-middle mx-0">
-                  <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover rounded-circle"
-                     href="#!"
-                     data-toggle="tooltip"
-                     data-placement="top"
-                     title="Agregar al carrito">
-                    <i class="fa fa-shopping-cart"></i>
-                  </a>
-                </li>
-                <br>
+                @if (!auth()->guest())
+                  <li class="list-inline-item align-middle mx-0">
+                    <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover rounded-circle"
+                       href="#!"
+                       data-toggle="tooltip"
+                       data-placement="top"
+                       title="Agregar al carrito">
+                      <i class="fa fa-shopping-cart"></i>
+                    </a>
+                  </li>
+                  <br>
+                @endif
                 <li class="list-inline-item align-middle mx-0">
                   <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover rounded-circle"
                      href="{{ route('user.products.show', ['id'=> $product->id]) }}"
@@ -101,16 +103,18 @@
                     <i class="fa fa-info"></i>
                   </a>
                 </li>
-                <br>
-                <li class="list-inline-item align-middle mx-0">
-                  <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover rounded-circle"
-                     href="#!"
-                     data-toggle="tooltip"
-                     data-placement="top"
-                     title="Agregar a favoritos">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </li>
+                @if (!auth()->guest())
+                  <br>
+                  <li class="list-inline-item align-middle mx-0">
+                    <a class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover rounded-circle"
+                       href="#!"
+                       data-toggle="tooltip"
+                       data-placement="top"
+                       title="Agregar a favoritos">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                  </li>
+                @endif
               </ul>
               <!-- End Products Icons -->
             </div>

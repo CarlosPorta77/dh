@@ -10,6 +10,7 @@ use File;
 use Intervention\Image\Facades\Image;
 
 class ImageController extends Controller {
+
   public function index($id) {
 
     $product = Product::find($id);
@@ -48,8 +49,8 @@ class ImageController extends Controller {
       $productImage->product_id = $id;
       $productImage->save();
     }
-
-    return back();
+    $msgSuccess = 'Imagen agregada';
+    return back()->with(compact('msgSuccess'));
   }
 
   public function destroy($id) {
@@ -62,16 +63,18 @@ class ImageController extends Controller {
       //dd($fullPath);
       $deleted = File::delete($fullPath);
     }
-    if ($deleted) {
-      $productImage->delete();
-    }
+    if (!$deleted) {
+      $msgAlert = 'Error al eliminar la imagen';
+      return back()->with(compact('msgAlert'));
 
-    return back();
+    }
+    $productImage->delete();
+
+    $msgSuccess = 'Imagen eliminada';
+    return back()->with(compact('msgSuccess'));
   }
 
   public function select($product_id, $image_id) {
-    //dump($product_id);
-    //dd($image_id);
     ProductImage::where('product_id', $product_id)->update([
         'featured' => false,
     ]);
@@ -80,6 +83,7 @@ class ImageController extends Controller {
     $productImage->featured = true;
     $productImage->save();
 
-    return back();
+    $msgSuccess = 'Imagen destacada exitosamente';
+    return back()->with(compact('msgSuccess'));
   }
 }

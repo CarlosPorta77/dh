@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller {
   public function index() {
-    $products = Product::paginate(5);
+    $products = Product::paginate(10);
 
     return view('admin.products.index')->with(compact('products')); //listado
   }
@@ -46,7 +46,8 @@ class ProductController extends Controller {
     $product->long_description = $request->input('long_description');
     $product->save();
 
-    return redirect(route('admin.products.index'));
+    $msgSuccess = 'Se insertó el producto exitosamente';
+    return back()->with(compact('msgSuccess'));
   }
 
   public function edit($id) {
@@ -83,14 +84,15 @@ class ProductController extends Controller {
     $product->long_description = $request->input('long_description');
     $product->save();
 
-    return redirect(route('admin.products.index'));
+    $msgSuccess = 'Modificación exitosa';
+    return back()->with(compact('msgSuccess'));
   }
 
   public function destroy(Request $request) {
-    $product = Product::find($request->$id);
+    $product = Product::find($request->id);
     $product->delete();
 
-    return back(); //formulario de creación
+    $msgSuccess = 'Eliminación exitosa';
+    return back()->with(compact('msgSuccess'));
   }
-
 }

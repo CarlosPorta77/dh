@@ -12,17 +12,21 @@
 */
 
 Route::get('/', 'TestController@welcome')->name('welcome');
-//Route::get('/welcome', 'TestController@welcome');
+Route::get('/soon', 'TestController@soon')->name('soon');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/checkout', 'HomeController@checkout')->name('checkout');
 Route::get('/cart', 'HomeController@cart')->name('cart');
 
 Route::get('/products/{id}', 'ProductController@show')->name('user.products.show');
 
 Route::post('/cart/', 'CartDetailController@store')->name('user.cart.store');
 Route::delete('/cart', 'CartDetailController@destroy')->name('user.cart.destroy');
+
+Route::get('/checkout1', 'CartController@checkout1')->name('user.cart.checkout1');
+Route::get('/checkout2', 'CartController@checkout2')->name('user.cart.checkout2');
+Route::post('/checkout3', 'CartController@checkout3')->name('user.cart.checkout3');
+Route::post('/checkout4', 'CartController@checkout4')->name('user.cart.checkout4');
 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function () {

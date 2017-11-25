@@ -7,8 +7,11 @@ use App\Product;
 
 class TestController extends Controller
 {
-    public function welcome() {
-      $products = Product::paginate(10);
-      return view('welcome')->with(compact('products'));
-    }
+  public function welcome() {
+    $products = Product::paginate(10);
+    return view('welcome')->with(compact('products'));
+  }
+  public function soon() {
+    return view('soon');
+  }
 }

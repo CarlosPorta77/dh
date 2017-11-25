@@ -26,6 +26,10 @@
   </section>
   <!-- End Breadcrumbs -->
 
+  <!-- Flash notifications -->
+  @include('includes.flash')
+  <!-- End Flash notifications -->
+
   <!-- Form -->
   <div class="container g-pt-20 g-pb-20">
     <header class="text-center mb-4">

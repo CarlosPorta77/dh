@@ -14,6 +14,8 @@
   <script src="{{ asset('assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/appear.js') }}"></script>
   <script src="{{ asset('assets/vendor/jquery.filer/js/jquery.filer.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/chosen/chosen.jquery.js') }}"></script>
+  <script src="{{ asset('assets/vendor/image-select/src/ImageSelect.jquery.js') }}"></script>
 
 
   <!-- JS Revolution Slider -->
@@ -43,6 +45,12 @@
   <script src="{{ asset('assets/js/components/hs.count-qty.js') }}"></script>
   <script src="{{ asset('assets/js/helpers/hs.focus-state.js') }}"></script>
   <script src="{{ asset('assets/js/components/hs.file-attachement.js') }}"></script>
+  <script src="{{ asset('assets/js/components/hs.select.js') }}"></script>
+  <script src="{{ asset('assets/js/components/hs.step-form.js') }}"></script>
+  <script src="{{ asset('assets/js/components/hs.go-to.js') }}"></script>
+
+
+
 
 
   <!-- JS Customization -->
@@ -71,6 +79,12 @@
               }
           }], true);
       });
+
+      // initialization of custom select
+      $.HSCore.components.HSSelect.init('.js-custom-select');
+
+      // initialization of step form
+      $.HSCore.components.HSStepForm.init('.js-step-form');
 
       // Bootstrap tooltip
       $(function () {

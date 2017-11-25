@@ -22,16 +22,17 @@ class CartDetailController extends Controller {
     $cartDetail->notes       = '';
     $cartDetail->save();
 
-    return back();
+    $msgSuccess='Producto agregado al carrito';
+    return back()->with(compact('msgSuccess'));
   }
+
   public function destroy(Request $request) {
     $cartDetail = CartDetail::find($request->cart_detail_id);
 
     if ($cartDetail->cart_id == auth()->user()->cart->id) {
       $cartDetail->delete();
     }
-  }
-
-    return back();
+    $msgSuccess='Eliminación exitosa';
+    return back()->with(compact('msgSuccess'));
   }
 }

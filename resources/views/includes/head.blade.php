@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ asset('assets/vendor/icon-line-pro/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendor/slick-carousel/slick/slick.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendor/icon-hs/style.css') }}">
+  <link rel="stylesheet" href="../assets/vendor/chosen/chosen.css">
   <link rel="stylesheet" href="{{ asset('assets/vendor/hamburgers/hamburgers.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css') }}">

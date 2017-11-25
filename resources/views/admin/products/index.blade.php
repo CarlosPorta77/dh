@@ -26,6 +26,10 @@
   </section>
   <!-- End Breadcrumbs -->
 
+  <!-- Flash notifications -->
+  @include('includes.flash')
+  <!-- End Flash notifications -->
+
   <!-- Products -->
   <div class="container g-pt-20 g-pb-20">
     <header class="text-center mb-4">
@@ -81,7 +85,7 @@
                 </div>
                 <div class="col-md-4 col-xs-12">
                   <span class="d-md-none font-weight-bold">Desc: </span>
-                  {{(strlen($product->description) > 40 ? substr($product->description, 0, 40) . '...' :  $product->description)}}
+                  {{(strlen($product->description) > 40) ? substr($product->description, 0, 37) . '...' :  $product->description }}
                 </div>
                 <div class="col-md-2 col-xs-12">
                   <span class="d-md-none font-weight-bold">Cat: </span>
@@ -89,7 +93,7 @@
                 </div>
                 <div class="col-md-2 col-xs-12 text-md-right">
                   <span class="d-md-none font-weight-bold">Precio: </span>
-                  $ {{ number_format($product->price, 2) }}
+                  ${{ number_format($product->price, 2) }}
                 </div>
               </div>
             </div>

@@ -22,6 +22,10 @@
   </section>
   <!-- End Breadcrumbs -->
 
+  <!-- Flash notifications -->
+  @include('includes.flash')
+  <!-- End Flash notifications -->
+
   <div class="container g-py-50">
     <div class="row">
       <div class="col-lg-7">
@@ -89,6 +93,7 @@
           </div>
           <!-- End Accordion -->
 
+          <!-- Form -->
           <form action="{{route('user.cart.store')}}" method="post">
           {{ csrf_field() }}
 
@@ -97,6 +102,7 @@
             <!-- End Field product_id hidden -->
 
             <!-- Quantity -->
+            @if (!auth()->guest())
             <div class="d-flex justify-content-between align-items-center g-brd-bottom g-brd-gray-light-v3 py-3 g-mb-30 g-brd-primary--focus"
                  role="tab">
               <h5 class="g-color-gray-dark-v5 g-font-weight-400 g-font-size-default mb-0">Cantidad</h5>
@@ -110,105 +116,31 @@
                 </div>
               </div>
             </div>
+            @endif
             <!-- End Quantity -->
 
-            <!-- Buttons -->
+            <!-- Button -->
             <div class="row g-mx-minus-5 g-mb-20">
+              @if (!auth()->guest())
               <div class="col g-px-5 g-mb-10">
                 <button class="btn btn-block u-btn-teal g-font-size-12 text-uppercase g-py-15 g-px-25" type="submit">
                   Agregar al carrito
-                  <i class="align-middle ml-2 fa fa-shopping-cart"></i>
+                  <i class="ml-2 fa fa-shopping-cart g-font-size-14"></i>
                 </button>
               </div>
+              @endif
               <div class="col g-px-5 g-mb-10">
-                <button
-                    class="btn btn-block u-btn-outline-black g-brd-gray-dark-v5 g-brd-black--hover g-color-gray-dark-v4 g-color-white--hover g-font-size-12 text-uppercase g-py-15 g-px-25"
-                    type="button">
-                  Agregar a favoritos
-                  <i class="align-middle ml-2 fa fa-heart"></i>
-                </button>
+                <a href="{{ URL::previous() }}" class="btn btn-block u-btn-outline-black g-brd-gray-dark-v5 g-brd-black--hover g-color-gray-dark-v4 g-color-white--hover g-font-size-12 text-uppercase g-py-15 g-px-25" type="button">
+                  Volver <i class="ml-2 fa fa-backward g-font-size-14"></i>
+                </a>
               </div>
+
             </div>
             <!-- End Buttons -->
           </form>
+          <!-- End Form -->
 
-          <!-- Nav Tabs -->
-          <ul class="nav d-flex justify-content-between g-font-size-12 text-uppercase" role="tablist"
-              data-target="nav-1-1-default-hor-left">
-            <li class="nav-item g-brd-bottom g-brd-gray-dark-v4">
-              <a class="nav-link active g-color-primary--active g-pa-0 g-pb-1" data-toggle="tab"
-                 href="#nav-1-1-default-hor-left--3" role="tab">Returns</a>
-            </li>
-            <li class="nav-item g-brd-bottom g-brd-gray-dark-v4">
-              <a class="nav-link g-color-primary--active g-pa-0 g-pb-1" data-toggle="tab"
-                 href="#nav-1-1-default-hor-left--2" role="tab">Delivery</a>
-            </li>
-          </ul>
-          <!-- End Nav Tabs -->
 
-          <!-- Tab Panes -->
-          <div id="nav-1-1-default-hor-left" class="tab-content">
-            <div class="tab-pane fade show active g-pt-30" id="nav-1-1-default-hor-left--3" role="tabpanel">
-              <p class="g-color-gray-dark-v4 g-font-size-13 mb-0">You can return/exchange your orders in Unify
-                E-commerce.
-                For more information, read our
-                <a href="#!">FAQ</a>
-                .
-              </p>
-            </div>
-
-            <div class="tab-pane fade g-pt-30" id="nav-1-1-default-hor-left--2" role="tabpanel">
-              <!-- Shipping Mehtod -->
-              <table>
-                <thead class="h6 g-brd-bottom g-brd-gray-light-v3 g-color-gray-dark-v3 g-font-size-13">
-                <tr>
-                  <th class="g-width-100 g-font-weight-500 g-pa-0 g-pb-10">Destination</th>
-                  <th class="g-width-140 g-font-weight-500 g-pa-0 g-pb-10">Delivery type</th>
-                  <th class="g-width-150 g-font-weight-500 g-pa-0 g-pb-10">Delivery time</th>
-                  <th class="g-font-weight-500 text-right g-pa-0 g-pb-10">Cost</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="g-color-gray-dark-v4 g-font-size-12">
-                  <td class="align-top g-py-10">UK</td>
-                  <td class="align-top g-py-10">Standard delivery</td>
-                  <td class="align-top g-font-size-11 g-py-10">2-3 Working days</td>
-                  <td class="align-top text-right g-py-10">$5.5</td>
-                </tr>
-                <tr class="g-color-gray-dark-v4 g-font-size-12">
-                  <td class="align-top g-py-10"></td>
-                  <td class="align-top g-py-10">Next day</td>
-                  <td class="align-top g-font-size-11 g-py-10">Order before 12pm monday - thursday and receive it the
-                    next
-                    day
-                  </td>
-                  <td class="align-top text-right g-py-10">$9.5</td>
-                </tr>
-                <tr class="g-color-gray-dark-v4 g-font-size-12">
-                  <td class="align-top g-py-10"></td>
-                  <td class="align-top g-py-10">Saturday delivery</td>
-                  <td class="align-top g-font-size-11 g-py-10">Saturday delivery for orders placed before 12pm on friday
-                  </td>
-                  <td class="align-top text-right g-py-10">$12.00</td>
-                </tr>
-                <tr class="g-color-gray-dark-v4 g-font-size-12">
-                  <td class="align-top g-py-10">Europe</td>
-                  <td class="align-top g-py-10">Standard delivery</td>
-                  <td class="align-top g-font-size-11 g-py-10">3-9 Working days</td>
-                  <td class="align-top text-right g-py-10">$20.00</td>
-                </tr>
-                <tr class="g-color-gray-dark-v4 g-font-size-12">
-                  <td class="align-top g-py-10">America</td>
-                  <td class="align-top g-py-10">Standard delivery</td>
-                  <td class="align-top g-font-size-11 g-py-10">3-9 Working days</td>
-                  <td class="align-top text-right g-py-10">$25.00</td>
-                </tr>
-                </tbody>
-              </table>
-              <!-- End Shipping Mehtod -->
-            </div>
-          </div>
-          <!-- End Tab Panes -->
         </div>
       </div>
     </div>
