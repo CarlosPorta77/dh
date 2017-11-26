@@ -41,4 +41,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group
   Route::post('/products/{id}/images', 'ImageController@store')->name('admin.products.images.store'); //guardar
   Route::delete('/products/{id}/images', 'ImageController@destroy')->name('admin.products.images.destroy'); //guardar
   Route::get('/products/{product_id}/images/select/{image_id}', 'ImageController@select')->name('admin.products.images.select'); //guardar
+
+  Route::get('/categories', 'CategoryController@index')->name('admin.categories.index'); // listar
+  Route::get('/categories/create', 'CategoryController@create')->name('admin.categories.create'); //crear
+  Route::post('/categories', 'CategoryController@store')->name('admin.categories.store'); //guardar
+  Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('admin.categories.edit'); // formulario de edición
+  Route::post('/categories/{category}/edit', 'CategoryController@update')->name('admin.categories.update'); //actualizar
+  Route::delete('/categories/{category}', 'CategoryController@destroy')->name('admin.categories.destroy');
+
 });
