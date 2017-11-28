@@ -55,7 +55,10 @@ class CategoryController extends Controller {
             $constraint->aspectRatio(); // mantengo el ratio de la imagen
             $constraint->upsize(); // no dejo que escale para arriba
           });
-
+      echo '$path';
+      dump($path);
+      echo '$fileName';
+      dd($fileName);
       $img->save(public_path($path . $fileName), 85);
       $category->image = $fileName;
     }
