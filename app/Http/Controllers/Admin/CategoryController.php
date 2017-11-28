@@ -63,7 +63,7 @@ class CategoryController extends Controller {
       echo '$path';
       dump($path);
       echo '$fileName';
-      dd($fileName);
+      dump($fileName);
       $img->save($path . $fileName, 85);
       $category->image = $fileName;
     }
