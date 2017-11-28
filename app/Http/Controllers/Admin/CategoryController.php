@@ -49,7 +49,11 @@ class CategoryController extends Controller {
       $fileName = uniqid() . '-' . $request->file('image')->getClientOriginalName();
       //$img = Image::make($request->file('image')); // Obtengo la imagen
 
+      echo '$request->file(\'image\')->getRealPath(): ' . $request->file('image')->getRealPath() . '<br>';
+      echo '$path: ' . $path . '<br>';
+      echo '$fileName: ' . $fileName . '<br>';
       $img = Image::make($request->file('image')->getRealPath()); // Obtengo la imagen
+      echo 'pasé el make';
       $img->resize(1024,
           null,
           function ($constraint) { // le cambio el tamaño a width: 1024, heigh: auto
