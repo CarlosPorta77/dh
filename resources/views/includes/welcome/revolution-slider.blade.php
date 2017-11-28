@@ -7,11 +7,11 @@
       <ul>
         <!-- SLIDE  -->
         <li data-index="rs-2800" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-            data-easeout="default" data-masterspeed="default" data-thumb="assets/img-temp/1920x1080/img2.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide"
+            data-easeout="default" data-masterspeed="default" data-thumb="{{asset('/images/products/rs/rs-01.jpg')}}" data-rotate="0" data-saveperformance="off" data-title="Slide"
             data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
             data-description="">
           <!-- MAIN IMAGE -->
-          <img src="{{asset('images/rs/rs-01.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+          <img src="{{asset('/images/products/rs/rs-01.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
           <!-- LAYERS -->
           <!-- LAYER NR. 1 -->
           <div class="tp-caption tp-shape tp-shapewrapper"
@@ -89,11 +89,11 @@
 
           <!-- SLIDE  -->
         <li data-index="rs-2802" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-            data-easeout="default" data-masterspeed="default" data-thumb="assets/img-temp/1920x1080/img1.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide"
+            data-easeout="default" data-masterspeed="default" data-thumb="{{asset('images/images/rs/rs-02.jpg')}}" data-rotate="0" data-saveperformance="off" data-title="Slide"
             data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
             data-description="">
           <!-- MAIN IMAGE -->
-          <img src="{{asset('images/rs/rs-02.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+          <img src="{{asset('images/images/rs/rs-02.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
           <!-- LAYERS -->
 
           <!-- LAYER NR. 15 -->
