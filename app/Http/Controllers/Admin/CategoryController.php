@@ -30,7 +30,8 @@ class CategoryController extends Controller {
       // guardar la imagen en el server
       $path     = public_path() . '/images/categories/';
       $fileName = uniqid() . '-' . $request->file('image')->getClientOriginalName();
-
+      dump($path);
+      dd($fileName);
       $img = Image::make($request->file('image')); // Obtengo la imagen
       $img->getRealPath()->resize(1024,
           null,
