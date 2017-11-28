@@ -32,7 +32,7 @@ class CategoryController extends Controller {
       $fileName = uniqid() . '-' . $request->file('image')->getClientOriginalName();
 
       $img = Image::make($request->file('image')); // Obtengo la imagen
-      $img->resize(1024,
+      $img->getRealPath()->resize(1024,
           null,
           function ($constraint) { // le cambio el tamaño a width: 1024, heigh: auto
             $constraint->aspectRatio(); // mantengo el ratio de la imagen
