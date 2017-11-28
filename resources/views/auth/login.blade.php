@@ -83,7 +83,7 @@
                   <span class="d-block u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
                     <i class="fa" data-check-icon="&#xf00c"></i>
                   </span>
-                  Recordar mis datos
+                  Recordame
                 </label>
               </div>
               <div class="col align-self-center text-right">

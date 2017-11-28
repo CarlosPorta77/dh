@@ -33,14 +33,14 @@
         <!-- End Social Icons -->
 
         <!-- Teléfono -->
-        <div class="col-sm-auto g-hidden-sm-down g-color-white-opacity-0_6 g-font-weight-400 g-pl-15 g-pl-0--sm g-py-14">
+        <div class="col-sm-auto g-color-white-opacity-0_6 g-font-weight-400 g-pl-15 g-pl-0--sm g-py-14--sm g-pt-7 g-pb-0">
           <i class="icon-communication-163 u-line-icon-pro g-font-size-18 g-valign-middle g-color-white-opacity-0_8 g-mr-10 g-mt-minus-2"></i>
           0800-77-SUSHI(78744) o 4584-4777
         </div>
         <!-- End Teléfono -->
 
         <!-- Account -->
-        <div class="col-6 col-sm-auto g-pos-rel g-py-14">
+        <div class="col-6 col-sm-auto g-pos-rel g-py-14--sm g-pt-0 g-pb-10">
           <!-- List -->
           <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
             <!-- Account -->
@@ -130,7 +130,7 @@
         @if (!auth()->guest())
           <!-- Cart -->
             <div class="u-basket d-inline-block g-z-index-3">
-              <div class="g-py-10 g-px-6">
+              <div class="g-py-14--sm g-pt-0 g-pb-10 g-px-6">
                 <a href="#" id="basket-bar-invoker"
                    class="u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover"
                    aria-controls="basket-bar"
@@ -237,7 +237,7 @@
 
         <!-- Search -->
           <div class="d-inline-block g-valign-middle">
-            <div class="g-py-10 g-pl-15">
+            <div class="g-py-14--sm g-pt-0 g-pb-10 g-pl-15">
               <a href="#"
                  class="g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover"
                  aria-haspopup="true"
@@ -261,7 +261,7 @@
             >
               <div class="input-group">
                 <input
-                    class="form-control g-font-size-13 w-100"
+                    class="form-control g-font-size-14 w-100"
                     type="search"
                     name="query_string"
                     placeholder="Que buscás?...">
