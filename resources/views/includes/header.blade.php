@@ -33,15 +33,99 @@
         <!-- End Social Icons -->
 
         <!-- Teléfono -->
-        <div
-            class="col-sm-auto g-hidden-sm-down g-color-white-opacity-0_6 g-font-weight-400 g-pl-15 g-pl-0--sm g-py-14">
+        <div class="col-sm-auto g-hidden-sm-down g-color-white-opacity-0_6 g-font-weight-400 g-pl-15 g-pl-0--sm g-py-14">
           <i class="icon-communication-163 u-line-icon-pro g-font-size-18 g-valign-middle g-color-white-opacity-0_8 g-mr-10 g-mt-minus-2"></i>
           0800-77-SUSHI(78744) o 4584-4777
         </div>
         <!-- End Teléfono -->
 
+        <!-- Account -->
+        <div class="col-6 col-sm-auto g-pos-rel g-py-14">
+          <!-- List -->
+          <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
+            <!-- Account -->
+            @if (Auth::guest())
+              <li class="list-inline-item">
+                <a class="d-block g-color-white-opacity-0_6 g-font-weight-400 g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5"
+                   href="{{ route('login') }}">
+                  <i class="fa fa-sign-in g-font-size-16 g-mr-10"></i>Ingreso
+                </a>
+              </li>
+              <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
+              <li class="list-inline-item">
+                <a class="d-block g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover g-font-weight-400 g-py-5"
+                   href="{{ route('register') }}">
+                  <i class="fa fa-user-plus g-font-size-16 g-mr-10"></i>Registro
+                </a>
+              </li>
+            @else
+              <a id="account-dropdown-invoker-2"
+                 class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover"
+                 href="{{ route('home') }}"
+                 aria-controls="account-dropdown-2"
+                 aria-haspopup="true"
+                 aria-expanded="false"
+                 data-dropdown-event="hover"
+                 data-dropdown-target="#account-dropdown-2"
+                 data-dropdown-type="css-animation"
+                 data-dropdown-duration="300"
+                 data-dropdown-hide-on-scroll="false"
+                 data-dropdown-animation-in="fadeIn"
+                 data-dropdown-animation-out="fadeOut">
+                <i class="fa fa-user g-font-size-16 g-mr-10"></i>{{ Auth::user()->name }}
+              </a>
+            @endif
+            <ul id="account-dropdown-2"
+                class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-180 g-pb-5 g-mt-19 g-z-index-2"
+                aria-labelledby="account-dropdown-invoker-2">
+              @if (!Auth::guest())
+                {{--Inició sesión--}}
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="{{ route('cart') }}">
+                    Carrito de compras
+                  </a>
+                </li>
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="{{ route('home') }}">
+                    Panel de control
+                  </a>
+                </li>
+                @if (auth()->user()->admin)
+                  <li>
+                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                       href="{{ route('admin.products.index') }}">
+                      Gestionar productos
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                       href="{{ route('admin.categories.index') }}">
+                      Gestionar categorias
+                    </a>
+                  </li>
+                @endif
+                <li>
+                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
+                     href="{{ route('logout') }}"
+                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    Cerrar sesión
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+                </li>
+              @endif
+            </ul>
+            <!-- End Account -->
+          </ul>
+          <!-- End List -->
+        </div>
+        <!-- End Account -->
+
         <!-- Cart y search -->
-        <div class="col-sm-auto g-pr-15 g-pr-0--sm">
+        <div class="col-6 col-sm-auto g-pr-15 g-pr-0--sm">
 
         @if (!auth()->guest())
           <!-- Cart -->
@@ -194,90 +278,6 @@
         </div>
         <!-- End Cart y search -->
 
-        <!-- Account -->
-        <div class="col-sm-auto g-pos-rel g-py-14">
-          <!-- List -->
-          <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-            <!-- Account -->
-            @if (Auth::guest())
-              <li class="list-inline-item">
-                <a class="d-block g-color-white-opacity-0_6 g-font-weight-400 g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5"
-                   href="{{ route('login') }}">
-                  <i class="fa fa-sign-in g-font-size-16 g-mr-10"></i>Ingreso
-                </a>
-              </li>
-              <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
-              <li class="list-inline-item">
-                <a class="d-block g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover g-font-weight-400 g-py-5"
-                   href="{{ route('register') }}">
-                  <i class="fa fa-user-plus g-font-size-16 g-mr-10"></i>Registro
-                </a>
-              </li>
-            @else
-              <a id="account-dropdown-invoker-2"
-                 class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover"
-                 href="{{ route('home') }}"
-                 aria-controls="account-dropdown-2"
-                 aria-haspopup="true"
-                 aria-expanded="false"
-                 data-dropdown-event="hover"
-                 data-dropdown-target="#account-dropdown-2"
-                 data-dropdown-type="css-animation"
-                 data-dropdown-duration="300"
-                 data-dropdown-hide-on-scroll="false"
-                 data-dropdown-animation-in="fadeIn"
-                 data-dropdown-animation-out="fadeOut">
-                <i class="fa fa-user g-font-size-16 g-mr-10"></i>{{ Auth::user()->name }}
-              </a>
-            @endif
-            <ul id="account-dropdown-2"
-                class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-180 g-pb-5 g-mt-19 g-z-index-2"
-                aria-labelledby="account-dropdown-invoker-2">
-              @if (!Auth::guest())
-                {{--Inició sesión--}}
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="{{ route('cart') }}">
-                    Carrito de compras
-                  </a>
-                </li>
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="{{ route('home') }}">
-                    Panel de control
-                  </a>
-                </li>
-                @if (auth()->user()->admin)
-                  <li>
-                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="{{ route('admin.products.index') }}">
-                      Gestionar productos
-                    </a>
-                  </li>
-                  <li>
-                    <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                       href="{{ route('admin.categories.index') }}">
-                      Gestionar categorias
-                    </a>
-                  </li>
-                @endif
-                <li>
-                  <a class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                     href="{{ route('logout') }}"
-                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    Cerrar sesión
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                  </form>
-                </li>
-              @endif
-            </ul>
-            <!-- End Account -->
-          </ul>
-          <!-- End List -->
-        </div>
-        <!-- End Account -->
       </div>
     </div>
   </div>
