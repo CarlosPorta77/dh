@@ -133,7 +133,7 @@
 
       <div class="col-md-6 order-lg-1 g-mb-80">
         <div class="mb-5">
-          <h2 class="h1 g-font-weight-400 mb-3">Bienvenido a Furusato</h2>
+          <h2 class="h1 g-font-weight-400 mb-3">Bienvenido a Furusato </h2>
           <p class="g-color-gray-dark-v4">Somos un emprendimiento gastronómico dedicado desde el año 1999 a la elaboración de sushi calidad Premium para delivery y catering.</p>
           <p class="g-color-gray-dark-v4">En un ambiente de suma calidez y profesionalismo nuestros Sushi Masters junto al equipo de sushiman y ayudantes logran las más exquisitas y variadas combinaciones fusionando colores y sabores propios de este milenario arte culinario.</p>
         </div>
