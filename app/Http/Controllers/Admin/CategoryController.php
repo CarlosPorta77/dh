@@ -48,6 +48,8 @@ class CategoryController extends Controller {
       $path     = 'images/categories/';
       $fileName = uniqid() . '-' . $request->file('image')->getClientOriginalName();
       //$img = Image::make($request->file('image')); // Obtengo la imagen
+      echo 'voy a hacer el make: ' . $request->file('image')->getRealPath() . '<br>';
+
       $img = Image::make($request->file('image')->getRealPath()); // Obtengo la imagen
       $img->resize(1024,
           null,
