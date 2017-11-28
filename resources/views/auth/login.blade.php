@@ -134,8 +134,8 @@
       <div class="col-md-6 order-lg-1 g-mb-80">
         <div class="mb-5">
           <h2 class="h1 g-font-weight-400 mb-3">Bienvenido a Furusato</h2>
-          <p class="g-color-gray-dark-v4">The time has come to bring those ideas and plans to life. This is
-            where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+          <p class="g-color-gray-dark-v4">Somos un emprendimiento gastronómico dedicado desde el año 1999 a la elaboración de sushi calidad Premium para delivery y catering.</p>
+          <p class="g-color-gray-dark-v4">En un ambiente de suma calidez y profesionalismo nuestros Sushi Masters junto al equipo de sushiman y ayudantes logran las más exquisitas y variadas combinaciones fusionando colores y sabores propios de este milenario arte culinario.</p>
         </div>
 
         <div class="row">
@@ -144,13 +144,12 @@
             <div class="media mb-5">
               <div class="d-flex mr-3">
                 <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
-                    <i class="icon-finance-168 u-line-icon-pro"></i>
+                    <i class="icon-hotel-restaurant-099 u-line-icon-pro"></i>
                 </span>
               </div>
               <div class="media-body align-self-center">
-                <h3 class="h5 g-font-weight-400">Reliable contracts</h3>
-                <p class="g-color-gray-dark-v5 mb-0">Reliable contracts, multifanctionality &amp; best
-                  usage of Unify template</p>
+                <h3 class="h5 g-font-weight-400">Tu pedido al momento</h3>
+                <p class="g-color-gray-dark-v5 mb-0">Todos los pedidos son preparados al momento. Garantizamos la frescura y calidad de los mismos.</p>
               </div>
             </div>
             <!-- End Icon Blocks -->
@@ -159,13 +158,12 @@
             <div class="media mb-5">
               <div class="d-flex mr-3">
                 <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
-                    <i class="icon-finance-193 u-line-icon-pro"></i>
+                    <i class="icon-hotel-restaurant-186 u-line-icon-pro"></i>
                 </span>
               </div>
               <div class="media-body align-self-center">
-                <h3 class="h5 g-font-weight-400">Security</h3>
-                <p class="g-color-gray-dark-v5 mb-0">Secure &amp; integrated options to create
-                  individual &amp; business websites</p>
+                <h3 class="h5 g-font-weight-400">Delivery gratuito</h3>
+                <p class="g-color-gray-dark-v5 mb-0">No tenemos gastos de envío dentro de CABA.</p>
               </div>
             </div>
             <!-- End Icon Blocks -->
@@ -174,13 +172,12 @@
             <div class="media">
               <div class="d-flex mr-3">
                 <span class="align-self-center u-icon-v1 u-icon-size--lg g-color-primary">
-                    <i class="icon-finance-122 u-line-icon-pro"></i>
+                    <i class="icon-finance-218 u-line-icon-pro"></i>
                 </span>
               </div>
               <div class="media-body align-self-center">
-                <h3 class="h5 g-font-weight-400">Maintain</h3>
-                <p class="g-color-gray-dark-v5 mb-0">We get it, you're busy and it's important that
-                  someone keeps up with marketing</p>
+                <h3 class="h5 g-font-weight-400">Atención telefónica</h3>
+                <p class="g-color-gray-dark-v5 mb-0">Nuestras operadoras telefónicas te asesorarán y aconsejarán para que puedas hacer el pedido tal cual como querés.</p>
               </div>
             </div>
             <!-- End Icon Blocks -->
@@ -191,47 +188,4 @@
   </section>
   <!-- End Login -->
 
-  <!-- Call to Action -->
-  <div class="g-bg-primary">
-    <div class="container g-py-10">
-      <div class="row justify-content-center">
-        <div class="col-md-4 mx-auto g-py-10">
-          <!-- Media -->
-          <div class="media g-px-50--lg">
-            <i class="d-flex g-color-white g-font-size-40 g-pos-rel g-top-3 mr-4 icon-transport-077 u-line-icon-pro u-line-icon-pro"></i>
-            <div class="media-body">
-              <span class="d-block g-color-white g-font-weight-500 g-font-size-17 text-uppercase">Envío sin cargo</span>
-              <span class="d-block g-color-white-opacity-0_8">Dentro de CABA</span>
-            </div>
-          </div>
-          <!-- End Media -->
-        </div>
-
-        <div class="col-md-4 mx-auto g-brd-x--md g-brd-white-opacity-0_3 g-py-20">
-          <!-- Media -->
-          <div class="media g-px-50--lg">
-            <i class="d-flex g-color-white g-font-size-40 g-pos-rel g-top-3 mr-4 icon-real-estate-040 u-line-icon-pro"></i>
-            <div class="media-body">
-              <span class="d-block g-color-white g-font-weight-500 g-font-size-17 text-uppercase">Free Returns</span>
-              <span class="d-block g-color-white-opacity-0_8">No Questions Asked</span>
-            </div>
-          </div>
-          <!-- End Media -->
-        </div>
-
-        <div class="col-md-4 mx-auto g-py-20">
-          <!-- Media -->
-          <div class="media g-px-50--lg">
-            <i class="d-flex g-color-white g-font-size-40 g-pos-rel g-top-3 mr-4 icon-hotel-restaurant-062 u-line-icon-pro"></i>
-            <div class="media-body text-left">
-              <span class="d-block g-color-white g-font-weight-500 g-font-size-17 text-uppercase">Free 24</span>
-              <span class="d-block g-color-white-opacity-0_8">Days Storage</span>
-            </div>
-          </div>
-          <!-- End Media -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Call to Action -->
 @endsection
