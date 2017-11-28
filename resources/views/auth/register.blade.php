@@ -174,8 +174,8 @@
         <div class="g-pr-20--lg">
           <div class="mb-5">
             <h2 class="h1 g-font-weight-400 mb-3">Bienvenido a Furusato</h2>
-            <p class="g-color-gray-dark-v4">The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them
-              into beautiful pixels.</p>
+            <p class="g-color-gray-dark-v4"><span class="g-color-primary">Nuestro Secreto: </span>La calidad Premium de los ingredientes.</p>
+            <p class="g-color-gray-dark-v4">Entre los ingredientes que utilizamos en Sushi Furusato encontramos pescados frescos sin cocción como salmón rosado Premium de Chile, pescados blancos como lenguado y besugo; mariscos como langostinos y pulpo; salmón ahumado, vegetales, frutas exóticas, especias, condimentos y el corazón del sushi: arroz avinagrado (shari).</p>
           </div>
 
           <div class="row text-center mb-5">
