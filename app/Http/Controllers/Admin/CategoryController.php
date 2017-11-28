@@ -45,10 +45,9 @@ class CategoryController extends Controller {
     if ($request->hasFile('image')) {
       // guardar la imagen en el server
       //$path     = public_path() . '/images/categories/';
-      $path     = 'images/categories/';
+      $path     = public_path('/images/categories/');
       $fileName = uniqid() . '-' . $request->file('image')->getClientOriginalName();
       //$img = Image::make($request->file('image')); // Obtengo la imagen
-      echo 'voy a hacer el make: ' . $request->file('image')->getRealPath() . '<br>';
 
       $img = Image::make($request->file('image')->getRealPath()); // Obtengo la imagen
       $img->resize(1024,
@@ -61,7 +60,7 @@ class CategoryController extends Controller {
       dump($path);
       echo '$fileName';
       dd($fileName);
-      $img->save(public_path($path . $fileName), 85);
+      $img->save($path . $fileName, 85);
       $category->image = $fileName;
     }
 
