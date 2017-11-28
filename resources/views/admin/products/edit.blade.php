@@ -7,7 +7,7 @@
     <div class="container">
       <ul class="u-list-inline">
         <li class="list-inline-item g-mr-5">
-          <a class="u-link-v5 g-color-text" href="#!">Home</a>
+          <a class="u-link-v5 g-color-text" href="{{ route('welcome') }}">Home</a>
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-mr-5">
@@ -15,7 +15,7 @@
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-mr-5">
-          <a class="u-link-v5 g-color-text" href="#">Productos</a>
+          <a class="u-link-v5 g-color-text" href="{{ route('admin.products.index') }}">Productos</a>
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-color-primary">
@@ -79,23 +79,47 @@
         </div>
       </div>
 
-      <!-- description -->
-      <div class="form-group g-mb-20">
-        <label class="g-mb-10" for="description">Descripción corta</label>
-        <input
-            id="description"
-            name="description"
-            class="form-control form-control-md rounded-0 {{ $errors->has('description') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
-            value="{{ old('description', $product->description) }}"
-            type="text"
-            placeholder="Ingresá una descripción abreviada del producto"
-        >
-        @if ($errors->has('description'))
-          <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('description') }}</small>
-        @endif
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- description -->
+          <div class="form-group g-mb-20">
+            <label class="g-mb-10" for="description">Descripción corta</label>
+            <input
+                id="description"
+                name="description"
+                class="form-control form-control-md rounded-0 {{ $errors->has('description') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
+                value="{{ old('description', $product->description) }}"
+                type="text"
+                placeholder="Ingresá una descripción abreviada del producto"
+            >
+            @if ($errors->has('description'))
+              <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('description') }}</small>
+            @endif
+          </div>
+          <!-- End description -->
 
+        </div>
+        <div class="col-sm-6">
+          <!-- Category -->
+          <div class="form-group g-mb-20">
+            <label class="g-mb-10" for="category_id">Categoría</label>
+
+            <select
+                class="form-control form-control-lg rounded-0 "
+                name="category_id"
+                id="category_id"
+            >
+              @foreach($categories as $category)
+                <option {{old('category_id', $product->category_id) == $category->id ? 'selected': ''}} value="{{ $category->id }}">{{$category->name}}</option>
+              @endforeach
+            </select>
+            @if ($errors->has('category_id'))
+              <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('category_id') }}</small>
+            @endif
+          </div>
+          <!-- End Category -->
+        </div>
       </div>
-      <!-- End description -->
 
       <!-- long_description -->
       <div class="form-group g-mb-20">
@@ -108,7 +132,7 @@
       </div>
       <!-- End long_description -->
 
-      <button class="btn btn-md u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Guardar cambios</button>
+      <button class="btn btn-md u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Guardar</button>
 
       <a href="{{ route('admin.products.index') }}" class="btn btn-md u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Cancelar</a>
     </form>

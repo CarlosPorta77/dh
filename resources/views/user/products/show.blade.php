@@ -119,7 +119,7 @@
             @endif
             <!-- End Quantity -->
 
-            <!-- Button -->
+            <!-- Buttons -->
             <div class="row g-mx-minus-5 g-mb-20">
               @if (!auth()->guest())
               <div class="col g-px-5 g-mb-10">

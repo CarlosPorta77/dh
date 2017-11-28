@@ -89,7 +89,7 @@
                 </div>
                 <div class="col-md-2 col-xs-12">
                   <span class="d-md-none font-weight-bold">Cat: </span>
-                  {{ ($product->category ? $product->category->name : 'General')}}
+                  {{ $product->category_name}}
                 </div>
                 <div class="col-md-2 col-xs-12 text-md-right">
                   <span class="d-md-none font-weight-bold">Precio: </span>
@@ -105,14 +105,16 @@
                  class="btn btn-md u-btn-none g-color-blue g-py-0 g-mx-0 g-px-5"
                  data-toggle="tooltip"
                  data-placement="top"
-                 title="Ver producto">
+                 title="Ver producto"
+                 target="_blank">
                 <i class="fa fa-eye"></i>
               </a>
               <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-green g-py-0 g-mx-0 g-px-5" data-toggle="tooltip"
                  data-placement="top" title="Editar">
                 <i class="fa fa-pencil"></i>
               </a>
-              <a href="{{ route('admin.products.images.index', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-orange g-py-0 g-mx-0 g-px-5" data-toggle="tooltip" data-placement="top" title="Ver imágenes">
+              <a href="{{ route('admin.products.images.index', ['id' => $product->id]) }}" class="btn btn-md u-btn-none g-color-orange g-py-0 g-mx-0 g-px-5" data-toggle="tooltip"
+                 data-placement="top" title="Ver imágenes">
                 <i class="fa fa-image"></i>
               </a>
 
@@ -136,7 +138,7 @@
       <div class="g-ml-10">
         {!! $products->links('vendor.pagination.bootstrap-4'); !!}
       </div>
-      <a href="{{ route('admin.products.create') }}" class="btn btn-md u-btn-teal g-mr-10 g-mb-15">Nuevo producto</a>
+      <a href="{{ route('admin.products.create') }}" class="btn btn-md u-btn-teal g-mr-10 g-mb-15">Nuevo</a>
     </div>
   </div>
   <!-- End Products -->

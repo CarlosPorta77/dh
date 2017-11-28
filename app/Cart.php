@@ -20,7 +20,7 @@ class Cart extends Model
 
   public function getTotalAttribute() {
     $total = DB::table('cart_details')
-        ->where('cart_id', auth()->user()->cart->id)
+        ->where('cart_id', $this->id)
         ->selectRaw('price * quantity as subtotal')
         ->get()
         ->sum('subtotal');

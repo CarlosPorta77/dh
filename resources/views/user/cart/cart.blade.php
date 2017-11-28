@@ -41,6 +41,11 @@
       </div>
       <!-- End Profile Settings -->
 
+      @if (auth()->user()->cart->details->count() == 0)
+        <h6 class="g-font-weight-400 g-font-size-default g-px-20">
+          Tu carrito está vacio.
+        </h6>
+      @endif
 
       <div class="col-lg-9 g-mb-50">
         <!-- Products Block -->

@@ -98,11 +98,11 @@
 
       <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
       <div class="form-group">
-        <label for="exampleFormControlFile1">Seleccionar imagen a subir</label>
+        <label for="photo">Seleccionar imagen a subir</label>
         <input
             type="file"
             class="form-control-file {{ $errors->has('photo') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
-            id="exampleFormControlFile1"
+            id="photo"
             name="photo"
             required>
         @if ($errors->has('photo'))

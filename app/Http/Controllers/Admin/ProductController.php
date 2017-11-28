@@ -5,18 +5,21 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller {
   public function index() {
-    $products = Product::paginate(10);
+    $products = Product::orderBy('category_id')->orderBy('name')->paginate(15);
 
     return view('admin.products.index')->with(compact('products')); //listado
   }
 
   public function create() {
-    return view('admin.products.create'); //formulario de creación
+    $categories = Category::orderBy('id')->get();
+
+    return view('admin.products.create')->with(compact('categories')); //formulario de creación
   }
 
   public function store(Request $request) {
@@ -43,17 +46,20 @@ class ProductController extends Controller {
     $product->name             = $request->input('name');
     $product->description      = $request->input('description');
     $product->price            = $request->input('price');
+    $product->category_id      = $request->input('category_id');
     $product->long_description = $request->input('long_description');
     $product->save();
 
     $msgSuccess = 'Se insertó el producto exitosamente';
+
     return back()->with(compact('msgSuccess'));
   }
 
   public function edit($id) {
-    $product = Product::find($id);
+    $product    = Product::find($id);
+    $categories = Category::orderBy('id')->get();
 
-    return view('admin.products.edit', compact('product')); //formulario de creación
+    return view('admin.products.edit')->with(compact('product', 'categories')); //formulario de creación
   }
 
   public function update(Request $request, $id) {
@@ -81,10 +87,12 @@ class ProductController extends Controller {
     $product->name             = $request->input('name');
     $product->description      = $request->input('description');
     $product->price            = $request->input('price');
+    $product->category_id      = $request->input('category_id');
     $product->long_description = $request->input('long_description');
     $product->save();
 
     $msgSuccess = 'Modificación exitosa';
+
     return back()->with(compact('msgSuccess'));
   }
 
@@ -93,6 +101,7 @@ class ProductController extends Controller {
     $product->delete();
 
     $msgSuccess = 'Eliminación exitosa';
+
     return back()->with(compact('msgSuccess'));
   }
 }

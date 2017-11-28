@@ -36,23 +36,50 @@
       <h1 class="h3 g-color-black g-font-weight-400">Modificar producto</h1>
     </header>
 
-    <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ route('admin.categories.update', ['id' => $category->id]) }}">
-    {{ csrf_field() }}
+    <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" method="post" action="{{ route('admin.categories.update', ['id' => $category->id]) }}"
+          enctype="multipart/form-data">
+      {{ csrf_field() }}
 
-    <!-- name -->
-      <div class="form-group g-mb-20">
-        <label class="g-mb-10" for="name">Nombre de la categoría</label>
-        <input
-            id="name"
-            name="name"
-            class="form-control form-control-md rounded-0 {{ $errors->has('name') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
-            type="text"
-            value="{{ old('name', $category->name) }}"
-            placeholder="Ingresá el nombre de la categoría"
-        >
-        @if ($errors->has('name'))
-          <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('name') }}</small>
-        @endif
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- name -->
+          <div class="form-group g-mb-20">
+            <label class="g-mb-10" for="name">Nombre de la categoría</label>
+            <input
+                id="name"
+                name="name"
+                class="form-control form-control-md rounded-0 {{ $errors->has('name') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
+                type="text"
+                value="{{ old('name', $category->name) }}"
+                placeholder="Ingresá el nombre de la categoría"
+            >
+            @if ($errors->has('name'))
+              <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('name') }}</small>
+            @endif
+          </div>
+          <!-- End name -->
+        </div>
+
+        <div class="col-sm-6">
+          <!-- image -->
+          <div class="form-group g-mb-20">
+            <label class="g-mb-10" for="image">Imagen de la categoría</label>
+            <input
+                id="image"
+                name="image"
+                class="form-control-file form-control-md rounded-0 {{ $errors->has('image') ? ' is-invalid ' : ' g-brd-gray-light-v3 ' }}"
+                type="file"
+                {{--value="{{ old('image') }}"--}}
+            >
+            @if ($category->image)
+              <p class="help-block">Subir imagen sólo si deseas reemplazar la <a href="{{ $category->image_url }}" target="_blank">imagen actual</a></p>
+            @endif
+            @if ($errors->has('image'))
+              <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('image') }}</small>
+            @endif
+          </div>
+          <!-- End image -->
+        </div>
       </div>
 
       <!-- description -->
@@ -69,11 +96,10 @@
         @if ($errors->has('description'))
           <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('description') }}</small>
         @endif
-
       </div>
       <!-- End description -->
 
-      <button class="btn btn-md u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Guardar cambios</button>
+      <button class="btn btn-md u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25 g-mr-10" type="submit">Guardar</button>
 
       <a href="{{ route('admin.categories.index') }}" class="btn btn-md u-btn-bluegray g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Cancelar</a>
     </form>

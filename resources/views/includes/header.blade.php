@@ -165,8 +165,14 @@
                   <span class="d-block h6 text-center text-uppercase mb-0">Carrito de compras</span>
                 </div>
                 <div class="js-scrollbar g-height-200">
-                @foreach(auth()->user()->cart->details as $detail)
 
+                  @if (auth()->user()->cart->details->count() == 0)
+                    <h6 class="g-font-weight-400 g-font-size-default g-px-20">
+                      Tu carrito está vacio.
+                    </h6>
+                  @endif
+
+                  @foreach(auth()->user()->cart->details as $detail)
                   <!-- Product -->
                     <div class="u-basket__product g-brd-none g-px-20">
                       <div class="row no-gutters g-pb-5">
@@ -226,10 +232,11 @@
                     {{--{{ csrf_field() }}--}}
 
                     @if (auth()->user()->cart->details->count() > 0)
-                    <button type="submit"
-                            class="btn btn-md btn-block u-btn-black g-brd-primary--hover g-bg-primary--hover g-mr-10 g-mb-15 text-uppercase rounded g-font-size-12 g-py-10">Realizar
-                      pedido<i class="fa fa-check  g-font-size-14 g-ml-6"></i></button>
-                      @endif
+                      <button type="submit"
+                              class="btn btn-md btn-block u-btn-black g-brd-primary--hover g-bg-primary--hover g-mr-10 g-mb-15 text-uppercase rounded g-font-size-12 g-py-10">
+                        Realizar
+                        pedido<i class="fa fa-check  g-font-size-14 g-ml-6"></i></button>
+                    @endif
                   </form>
                 </div>
               </div>
@@ -240,7 +247,7 @@
         <!-- Search -->
           <div class="d-inline-block g-valign-middle">
             <div class="g-py-10 g-pl-15">
-              <a href="#!"
+              <a href="#"
                  class="g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover"
                  aria-haspopup="true"
                  aria-expanded="false"
@@ -257,13 +264,20 @@
 
             <!-- Search Form -->
             <form id="searchform-1"
-                  class="u-searchform-v1 u-dropdown--css-animation u-dropdown--hidden u-shadow-v20 g-brd-around g-brd-gray-light-v4 g-bg-white g-right-0 rounded g-pa-10 1g-mt-8">
+                  class="u-searchform-v1 u-dropdown--css-animation u-dropdown--hidden u-shadow-v20 g-brd-around g-brd-gray-light-v4 g-bg-white g-right-0 rounded g-pa-10 1g-mt-8"
+                  method="get"
+                  action="{{ route('user.search.show') }}"
+            >
               <div class="input-group">
-                <input class="form-control g-font-size-13 w-100" type="search"
-                       placeholder="Que buscás?...">
+                <input
+                    class="form-control g-font-size-13 w-100"
+                    type="search"
+                    name="query_string"
+                    placeholder="Que buscás?...">
                 <div class="input-group-btn p-0">
-                  <button class="btn u-btn-primary g-font-size-12 text-uppercase g-py-13 g-px-15"
-                          type="submit">Buscar
+                  <button
+                      class="btn u-btn-primary g-font-size-12 text-uppercase g-py-13 g-px-15"
+                      type="submit">Buscar
                   </button>
                 </div>
               </div>

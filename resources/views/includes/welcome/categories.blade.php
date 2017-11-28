@@ -1,41 +1,36 @@
-<!-- Categories -->
-<div class="container g-pt-100 g-pb-70">
-    <div class="row g-mx-minus-10">
-        <div class="col-sm-6 col-md-4 g-px-10 g-mb-30">
-            <article class="u-block-hover">
-                <img class="w-100 u-block-hover__main--zoom-v1 g-mb-minus-8" src="assets/img-temp/650x850/img1.jpg"
-                     alt="Image Description">
-                <div class="g-pos-abs g-bottom-30 g-left-30">
-                    <span class="d-block g-color-black">Collections</span>
-                    <h2 class="h1 mb-0">Women</h2>
-                </div>
-                <a class="u-link-v2" href="#!"></a>
-            </article>
-        </div>
+<div class="container g-pb-30">
+  <div class="text-center mx-auto g-max-width-600 g-mb-50 g-mt-20">
+    <h2 class="g-color-black mb-4">Nuestros productos</h2>
+    <p class="lead">Disfrutá de un verdadero sushi calidad Premium elaborado con los mejores ingredientes seleccionados por su frescura y sabor. Cada plato es preparado en el
+      momento de tu pedido con la dedicación y experiencia de nuestros Sushi Masters.</p>
+  </div>
 
-        <div class="col-sm-6 col-md-4 g-px-10 g-mb-30">
-            <article class="u-block-hover">
-                <img class="w-100 u-block-hover__main--zoom-v1 g-mb-minus-8" src="assets/img-temp/650x850/img2.jpg"
-                     alt="Image Description">
-                <div class="g-pos-abs g-bottom-30 g-left-30">
-                    <span class="d-block g-color-black">Collections</span>
-                    <h2 class="h1 mb-0">Children</h2>
-                </div>
-                <a class="u-link-v2" href="#!"></a>
-            </article>
-        </div>
+  <!-- Categories -->
+  <div class="row g-pt-20 g-mb-50">
+    @foreach($categories as $category)
+      <div class="col-6 col-lg-3 g-mb-30">
+        <!-- Category -->
+        <figure class="g-pos-rel g-mb-20">
+          <img class="img-fluid" src="{{ $category->image_url }}" alt="{{ $category->name }}">
+        </figure>
 
-        <div class="col-sm-6 col-md-4 g-px-10 g-mb-30">
-            <article class="u-block-hover">
-                <img class="w-100 u-block-hover__main--zoom-v1 g-mb-minus-8" src="assets/img-temp/650x850/img3.jpg"
-                     alt="Image Description">
-                <div class="g-pos-abs g-bottom-30 g-left-30">
-                    <span class="d-block g-color-black">Collections</span>
-                    <h2 class="h1 mb-0">Men</h2>
-                </div>
-                <a class="u-link-v2" href="#!"></a>
-            </article>
+        <div class="media">
+          <!-- Category Info -->
+          <div class="d-flex flex-column">
+            <h4 class="h6 g-color-black mb-1">
+              <a class="u-link-v5 g-color-black g-color-primary--hover"
+                 href="{{ route('user.search.show', ['category_id' => $category->id]) }}"
+              >
+                {{ $category->name }}
+              </a>
+            </h4>
+            <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13" href="#">{{ $category->description }}</a>
+          </div>
+          <!-- End Category Info -->
         </div>
-    </div>
+        <!-- End Category -->
+      </div>
+    @endforeach
+  </div>
+  <!-- End Categories -->
 </div>
-<!-- End Categories -->

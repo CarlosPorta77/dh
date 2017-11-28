@@ -7,7 +7,7 @@
     <div class="container">
       <ul class="u-list-inline">
         <li class="list-inline-item g-mr-5">
-          <a class="u-link-v5 g-color-text" href="#!">Home</a>
+          <a class="u-link-v5 g-color-text" href="{{ route('welcome') }}">Home</a>
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-mr-5">
@@ -15,7 +15,7 @@
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-mr-5">
-          <a class="u-link-v5 g-color-text" href="#">Categorias</a>
+          <a class="u-link-v5 g-color-text" href="{{ route ('admin.categories.index') }}#">Categorias</a>
           <i class="g-color-gray-light-v2 g-ml-5 fa fa-angle-right"></i>
         </li>
         <li class="list-inline-item g-color-primary">
@@ -56,6 +56,9 @@
               <div class="col-md-4">
                 <span class="font-weight-bold">Descripción</span>
               </div>
+              <div class="col-md-4">
+                <span class="font-weight-bold">Imagen</span>
+              </div>
             </div>
           </div>
           <div class="col-3 col-md-2 d-none d-md-flex">
@@ -80,6 +83,10 @@
                 <div class="col-md-4 col-xs-12">
                   <span class="d-md-none font-weight-bold">Desc: </span>
                   {{(strlen($category->description) > 40) ? substr($category->description, 0, 37) . '...' :  $category->description }}
+                </div>
+                <div class="col-md-4 col-xs-12">
+                  <span class="d-md-none font-weight-bold"></span>
+                  <img src="{{ $category->image_url }}" alt="" width="100">
                 </div>
               </div>
             </div>
@@ -115,7 +122,7 @@
       <div class="g-ml-10">
         {!! $categories->links('vendor.pagination.bootstrap-4'); !!}
       </div>
-      <a href="{{ route('admin.categories.create') }}" class="btn btn-md u-btn-teal g-mr-10 g-mb-15">Nueva categoría</a>
+      <a href="{{ route('admin.categories.create') }}" class="btn btn-md u-btn-teal g-mr-10 g-mb-15">Nueva</a>
     </div>
   </div>
   <!-- End Categories -->

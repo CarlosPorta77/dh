@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 class TestController extends Controller
 {
   public function welcome() {
-    $products = Product::paginate(10);
-    return view('welcome')->with(compact('products'));
+    $categories = Category::orderBy('orden')->get();
+    return view('welcome')->with(compact('categories'));
   }
+
   public function soon() {
     return view('soon');
   }
