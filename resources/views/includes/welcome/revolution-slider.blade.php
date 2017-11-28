@@ -143,7 +143,7 @@
                style="z-index: 20; min-width: 760px; max-width: 760px; white-space: normal; font-size: 60px; line-height: 100px; font-weight: 500; color: rgba(255, 255, 255, 1.00);border-width:0px;letter-spacing:-2px;">
             Pescados gourmet
             <br>
-            ¡ Imprerdibles !
+            ¡Imprerdibles!
           </div>
         </li>
         <!-- END SLIDE  -->
