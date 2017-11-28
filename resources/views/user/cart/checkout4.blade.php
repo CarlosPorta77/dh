@@ -3,7 +3,7 @@
 
 @section('content')
   <!-- Breadcrumbs -->
-  <section class="g-brd-bottom g-brd-gray-light-v4 g-py-20">
+  <section class="g-brd-bottom g-brd-gray-light-v4 g-py-10">
     <div class="container">
       <ul class="u-list-inline">
         <li class="list-inline-item g-mr-5">
@@ -53,7 +53,7 @@
   </div>
 
   <!-- Order completed -->
-  <div class="container g-py-20">
+  <div class="container g-py-10">
     <div class="u-shadow-v19 g-max-width-645 g-brd-around g-brd-gray-light-v4 text-center rounded mx-auto g-pa-30 g-pa-50--md">
           <span class="u-icon-v3 u-icon-size--lg g-color-white g-bg-primary rounded-circle g-pa-15 mb-5">
             <svg width="30" height="30 version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

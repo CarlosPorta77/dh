@@ -3,7 +3,7 @@
 
 @section('content')
   <!-- Breadcrumbs -->
-  <section class="g-brd-bottom g-brd-gray-light-v4 g-py-20">
+  <section class="g-brd-bottom g-brd-gray-light-v4 g-py-10">
     <div class="container">
       <ul class="u-list-inline">
         <li class="list-inline-item g-mr-5">
@@ -193,9 +193,9 @@
 
   <!-- Call to Action -->
   <div class="g-bg-primary">
-    <div class="container g-py-20">
+    <div class="container g-py-10">
       <div class="row justify-content-center">
-        <div class="col-md-4 mx-auto g-py-20">
+        <div class="col-md-4 mx-auto g-py-10">
           <!-- Media -->
           <div class="media g-px-50--lg">
             <i class="d-flex g-color-white g-font-size-40 g-pos-rel g-top-3 mr-4 icon-transport-077 u-line-icon-pro u-line-icon-pro"></i>

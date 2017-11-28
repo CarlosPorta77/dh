@@ -8,7 +8,7 @@
 
 @section('content')
   <!-- Breadcrumbs -->
-  <section class="g-brd-bottom g-brd-gray-light-v4 g-py-20">
+  <section class="g-brd-bottom g-brd-gray-light-v4 g-py-10">
     <div class="container">
       <ul class="u-list-inline">
         <li class="list-inline-item g-mr-5">

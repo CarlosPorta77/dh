@@ -293,7 +293,7 @@
   <!-- End Top Bar -->
 
   <!-- Second menu -->
-  <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+  <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-pb-5">
     <nav class="js-mega-menu navbar navbar-expand-lg">
       <div class="container">
         <!-- Responsive Toggle Button -->
