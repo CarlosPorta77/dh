@@ -2,6 +2,10 @@
 @section('title', 'registración')
 
 @section('content')
+
+  <!-- Js form validator -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/registerValidator.js"></script>
   <!-- Breadcrumbs -->
   <section class="g-brd-bottom g-brd-gray-light-v4 g-py-10">
     <div class="container">
@@ -40,10 +44,12 @@
                     value="{{ old('name') }}"
                     required
                     placeholder="Nombre">
-              </div>
+
               @if ($errors->has('name'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('name') }}</small>
               @endif
+              <small class="ename form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
+              </div>
 
               <div class="col g-mb-20">
                 <input
@@ -52,6 +58,11 @@
                     name="last_name"
                     value="{{ old('last_name') }}"
                     placeholder="Apellido">
+
+              @if ($errors->has('last_name'))
+                <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('last_name') }}</small>
+              @endif
+                <small class="elast_name form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
               </div>
             </div>
 
@@ -65,6 +76,7 @@
               @if ($errors->has('land_phone'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('land_phone') }}</small>
               @endif
+                <small class="eland_phone form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
             </div>
 
             <div class="g-mb-20">
@@ -74,6 +86,10 @@
                   name="cel_phone"
                   value="{{ old('cel_phone') }}"
                   placeholder="Teléfono móvil">
+                @if ($errors->has('cel_phone'))
+                    <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('cel_phone') }}</small>
+                @endif
+                    <small class="ecel_phone form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
             </div>
 
             <div class="g-mb-20">
@@ -86,6 +102,7 @@
               @if ($errors->has('address'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('address') }}</small>
               @endif
+                <small class="eaddress form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
             </div>
 
             <div class="g-mb-20">
@@ -98,6 +115,7 @@
               @if ($errors->has('city'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('city') }}</small>
               @endif
+                <small class="ecity form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
             </div>
 
             <div class="g-mb-20">
@@ -111,6 +129,7 @@
               @if ($errors->has('email'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('email') }}</small>
               @endif
+              <small class="eemail form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
             </div>
 
             <div class="g-mb-20">
@@ -125,6 +144,7 @@
               @if ($errors->has('password'))
                 <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('password') }}</small>
               @endif
+                <small class="epassword form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
             </div>
 
             <div class="g-mb-20">
@@ -138,10 +158,11 @@
             @if ($errors->has('password_confirmation'))
               <small class="form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">{{ $errors->first('password_confirmation') }}</small>
             @endif
+              <small class="epassword_confirmation form-control-feedback d-block g-bg-red g-color-white g-font-size-12 g-px-14 g-py-3 mt-0"></small>
 
             <div class="mb-1">
               <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-13 g-pl-25 mb-2">
-                <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
+                <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" name="accept">
                 <span class="d-block u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
                       <i class="fa" data-check-icon="&#xf00c"></i>
                     </span>
@@ -160,6 +181,8 @@
             </div>
 
             <button class="btn btn-block u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Confirmar registro</button>
+
+
           </form>
           <!-- End Form -->
         </div>
