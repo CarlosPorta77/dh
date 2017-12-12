@@ -106,7 +106,7 @@ emailbox.onchange = function() {
       errorname.innerText="El nombre excede la longitud permitida";
 
     }
-    if (last_name.length < 4) {
+    if (last_name.length < 2) {
       errores.push("El apellido es muy corto");
       errorlast_name.style.visibility = "visible";
       errorlast_name.innerText="El apellido es muy corto";
@@ -168,7 +168,7 @@ emailbox.onchange = function() {
     var name = formulario.name.value;
     errorname.style.visibility = "hidden";
 
-    if (name.length < 4) {
+    if (name.length < 2) {
       errorname.style.visibility = "visible";
       errorname.innerText="El nombre es muy corto";
     }
